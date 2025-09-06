@@ -202,13 +202,18 @@
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/overview.html">Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/01_part.html">Linear Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/01_part.html">Overview</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/02_part.html">Cost Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/03_part.html">Multiple Linear Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/04_part.html">Polynomial Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/05_part.html">Performance Metrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/06_part.html">OLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/02_part.html">Gradient Descent</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/03_part.html">Convergence Algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/04_part.html">Cost Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/05_part.html">Multiple Linear Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/06_part.html">Polynomial Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/07_part.html">Performance Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/08_part.html">OLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/09_part.html">Bias–Variance Tradeoff</a></li>
 </ul>
 </details></li>
 </ul>
@@ -440,7 +445,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-to-understand-ml">Example to Understand ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning">Types of Machine Learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components-of-ml">Key Components of ML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-ml-important">Why is ML important?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-ml-important">Why is ML important?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-machine-learning-algorithms"><strong>List of Machine Learning Algorithms</strong></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -544,6 +552,72 @@ document.write(`
 <li><p><strong>Automates tasks</strong> (spam filtering, recommendation systems, fraud detection).</p></li>
 <li><p>Improves over time as it sees more data.</p></li>
 </ul>
+<hr class="docutils" />
+<section id="list-of-machine-learning-algorithms">
+<h3><strong>List of Machine Learning Algorithms</strong><a class="headerlink" href="#list-of-machine-learning-algorithms" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Category</strong></p></th>
+<th class="head"><p><strong>Sub-type</strong></p></th>
+<th class="head"><p><strong>Algorithms</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Supervised Learning</strong></p></td>
+<td><p><strong>Regression</strong></p></td>
+<td><p>Linear Regression, Polynomial Regression, Ridge, Lasso, Elastic Net, SVR, Decision Tree Regression, Random Forest Regression, Gradient Boosting (XGBoost, LightGBM, CatBoost), kNN Regression, Bayesian Regression, Neural Networks</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><strong>Classification</strong></p></td>
+<td><p>Logistic Regression, kNN, SVM, Decision Trees (CART, ID3, C4.5), Random Forest, Gradient Boosting (XGBoost, LightGBM, CatBoost), Naive Bayes (Gaussian, Multinomial, Bernoulli), Perceptron, Multi-layer Perceptrons, Ensemble Methods (Bagging, Stacking, Voting), Probabilistic Graphical Models (Bayesian Networks, CRFs)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Unsupervised Learning</strong></p></td>
+<td><p><strong>Clustering</strong></p></td>
+<td><p>k-Means, Hierarchical Clustering, DBSCAN, OPTICS, Gaussian Mixture Models, Mean-Shift, Spectral Clustering, BIRCH, Affinity Propagation</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><strong>Dimensionality Reduction</strong></p></td>
+<td><p>PCA, Kernel PCA, ICA, SVD, Factor Analysis, t-SNE, UMAP, Autoencoders</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><strong>Association Rules</strong></p></td>
+<td><p>Apriori, Eclat, FP-Growth</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><strong>Density Estimation</strong></p></td>
+<td><p>KDE, Expectation-Maximization (EM), Hidden Markov Models (unsupervised setting)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Semi-Supervised Learning</strong></p></td>
+<td><p>—</p></td>
+<td><p>Self-training, Co-training, Label Propagation/Spreading, Semi-supervised SVM, Graph-based methods, Semi-supervised Deep Learning (Consistency Regularization, Pseudo-labeling)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Reinforcement Learning</strong></p></td>
+<td><p><strong>Value-based</strong></p></td>
+<td><p>Q-Learning, SARSA, Deep Q-Networks (DQN)</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><strong>Policy-based</strong></p></td>
+<td><p>Policy Gradient (REINFORCE), Actor–Critic (A2C, A3C), Proximal Policy Optimization (PPO), Trust Region Policy Optimization (TRPO)</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><strong>Model-based / Advanced</strong></p></td>
+<td><p>DDPG, TD3, SAC, Monte Carlo Tree Search, Multi-agent RL</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Other Methods</strong></p></td>
+<td><p><strong>Ensemble Methods</strong></p></td>
+<td><p>Bagging, Boosting (AdaBoost, Gradient Boosting, XGBoost, LightGBM, CatBoost), Stacking, Blending, Voting Classifier</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><strong>Probabilistic / Bayesian</strong></p></td>
+<td><p>Naive Bayes, Bayesian Networks, Gaussian Processes, HMMs, Markov Random Fields</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><strong>Deep Learning</strong></p></td>
+<td><p>Feedforward NN, CNN, RNN, LSTM, GRU, Transformers (BERT, GPT), Variational Autoencoders (VAE), Generative Adversarial Networks (GANs)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -558,6 +632,7 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -621,7 +696,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-to-understand-ml">Example to Understand ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning">Types of Machine Learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components-of-ml">Key Components of ML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-ml-important">Why is ML important?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-ml-important">Why is ML important?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-machine-learning-algorithms"><strong>List of Machine Learning Algorithms</strong></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
