@@ -214,6 +214,18 @@
 <li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/07_part.html">Performance Metrics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/08_part.html">OLS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/09_part.html">Bias–Variance Tradeoff</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/Hyperparameter_Tuning/overview.html">Hyperparameter Tuning in Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/Hyperparameter_Tuning/01_part.html">Regularization &amp; Generalization</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/Hyperparameter_Tuning/02_part.html">Lasso Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/Hyperparameter_Tuning/03_part.html">Ridge Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/Hyperparameter_Tuning/04_part.html">Elastic Net Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/Hyperparameter_Tuning/05_part.html">Workflow of Regularized Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/Hyperparameter_Tuning/06_part.html">Cross-Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/Hyperparameter_Tuning/07_part.html">Hyperparameter Tuning methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="machine_learning/supervised_learning/Linear_Regression/Hyperparameter_Tuning/08_part.html">Handle Overfitting</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 </ul>
@@ -445,7 +457,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-to-understand-ml">Example to Understand ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning">Types of Machine Learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components-of-ml">Key Components of ML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-ml-important">Why is ML important?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-ml-important">Why is ML important?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-approach-variants">Learning approach Variants</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-based-learning">Instance-based learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-based-learning">Model-based learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-machine-learning-algorithms"><strong>List of Machine Learning Algorithms</strong></a></li>
 </ul>
 </li>
@@ -552,6 +567,65 @@ document.write(`
 <li><p><strong>Automates tasks</strong> (spam filtering, recommendation systems, fraud detection).</p></li>
 <li><p>Improves over time as it sees more data.</p></li>
 </ul>
+</section>
+<section id="learning-approach-variants">
+<h2>Learning approach Variants<a class="headerlink" href="#learning-approach-variants" title="Link to this heading">#</a></h2>
+<section id="instance-based-learning">
+<h3>Instance-based learning<a class="headerlink" href="#instance-based-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Learns by <strong>memorizing training examples</strong>.</p></li>
+<li><p>No explicit model is built.</p></li>
+<li><p>Prediction is made by comparing a new instance with stored instances.</p></li>
+<li><p>Uses a <strong>similarity (distance) measure</strong> to find closest examples.</p></li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>k-Nearest Neighbors (kNN)</p></li>
+<li><p>Locally Weighted Regression</p></li>
+</ul>
+<p><strong>Pros:</strong></p>
+<ul class="simple">
+<li><p>Simple, flexible.</p></li>
+<li><p>Works well if decision boundary is irregular.</p></li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul class="simple">
+<li><p>Expensive at prediction time (must compare with many stored examples).</p></li>
+<li><p>Sensitive to noise and irrelevant features.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="model-based-learning">
+<h3>Model-based learning<a class="headerlink" href="#model-based-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Learns a <strong>general model</strong> from training data.</p></li>
+<li><p>The model captures underlying relationships, then is used for prediction.</p></li>
+<li><p>Parameters are estimated during training.</p></li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>Linear Regression</p></li>
+<li><p>Logistic Regression</p></li>
+<li><p>Neural Networks</p></li>
+<li><p>Decision Trees</p></li>
+</ul>
+<p><strong>Pros:</strong></p>
+<ul class="simple">
+<li><p>Fast prediction once model is trained.</p></li>
+<li><p>Generalizes well if model is appropriate.</p></li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul class="simple">
+<li><p>Training can be computationally heavy.</p></li>
+<li><p>If model is too simple, it underfits; if too complex, it overfits.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Key Difference</strong></p>
+<ul class="simple">
+<li><p><strong>Instance-based</strong>: “Remember examples, predict by similarity.”</p></li>
+<li><p><strong>Model-based</strong>: “Learn rules (parameters), predict by applying model.”</p></li>
+</ul>
+</section>
 <hr class="docutils" />
 <section id="list-of-machine-learning-algorithms">
 <h3><strong>List of Machine Learning Algorithms</strong><a class="headerlink" href="#list-of-machine-learning-algorithms" title="Link to this heading">#</a></h3>
@@ -696,7 +770,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-to-understand-ml">Example to Understand ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning">Types of Machine Learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components-of-ml">Key Components of ML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-ml-important">Why is ML important?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-ml-important">Why is ML important?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-approach-variants">Learning approach Variants</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-based-learning">Instance-based learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-based-learning">Model-based learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-machine-learning-algorithms"><strong>List of Machine Learning Algorithms</strong></a></li>
 </ul>
 </li>
