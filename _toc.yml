@@ -8,3 +8,7 @@ parts:
   - file: machine_learning/supervised_learning/Linear_Regression/overview
     sections:
     - glob: machine_learning/supervised_learning/Linear_Regression/*part
+    - file: machine_learning/supervised_learning/Linear_Regression/Hyperparameter_Tuning/overview
+      sections:
+      - glob: machine_learning/supervised_learning/Linear_Regression/Hyperparameter_Tuning/*part
+    
