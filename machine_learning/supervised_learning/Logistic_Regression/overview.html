@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Linear Regression Limitation &#8212; My sample book</title>
+    <title>Logistic Regression &#8212; My sample book</title>
   
   
   
@@ -80,6 +80,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'machine_learning/supervised_learning/Logistic_Regression/overview';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Assumtpions" href="01_part.html" />
+    <link rel="prev" title="Handle Overfitting" href="../Linear_Regression/Hyperparameter_Tuning/08_part.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -141,8 +143,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -223,6 +223,23 @@
 <li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/06_part.html">Cross-Validation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/07_part.html">Hyperparameter Tuning methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/08_part.html">Handle Overfitting</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Logistic Regression</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_part.html">Assumtpions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_part.html">Intiution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_part.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_part.html">Cost Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_part.html">Performance Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_part.html">One-vs-Rest (OVR) Logistic Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_part.html">Handling Imabalance dataset</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="HyperParameter_Tuning/overview.html">Hyperparameter Tuning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="HyperParameter_Tuning/01_part.html">Evaluation Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HyperParameter_Tuning/02_part.html">Cross Validation</a></li>
 </ul>
 </details></li>
 </ul>
@@ -443,7 +460,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Linear Regression Limitation</h1>
+    <h1>Logistic Regression</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -453,20 +470,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Linear Regression Limitation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-logsitic-regression-solves-the-problem">How Logsitic Regression solves the problem</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-and-non-convex-function">Convex and Non-Convex function</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-function">Convex function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-convex-function">Non-convex function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-limitation">Linear Regression Limitation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-logsitic-regression-solves-the-problem">How Logsitic Regression solves the problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-and-non-convex-function">Convex and Non-Convex function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-function">Convex function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-convex-function">Non-convex function</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-linear-regression-fails-for-classification"><strong>Why Linear Regression Fails for Classification</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-logistic-regression"><strong>Solution: Logistic Regression</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function"><strong>Cost Function</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent"><strong>Gradient Descent</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary"><strong>Summary</strong></a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -480,23 +496,29 @@ document.write(`
   <nav class="contents" id="contents" role="doc-toc">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#linear-regression-limitation" id="id1">Linear Regression Limitation</a></p></li>
-<li><p><a class="reference internal" href="#how-logsitic-regression-solves-the-problem" id="id2">How Logsitic Regression solves the problem</a></p></li>
-<li><p><a class="reference internal" href="#convex-and-non-convex-function" id="id3">Convex and Non-Convex function</a></p>
+<li><p><a class="reference internal" href="#logistic-regression" id="id1">Logistic Regression</a></p>
 <ul>
-<li><p><a class="reference internal" href="#convex-function" id="id4">Convex function</a></p></li>
-<li><p><a class="reference internal" href="#non-convex-function" id="id5">Non-convex function</a></p></li>
-<li><p><a class="reference internal" href="#why-linear-regression-fails-for-classification" id="id6"><strong>Why Linear Regression Fails for Classification</strong></a></p></li>
-<li><p><a class="reference internal" href="#solution-logistic-regression" id="id7"><strong>Solution: Logistic Regression</strong></a></p></li>
-<li><p><a class="reference internal" href="#cost-function" id="id8"><strong>Cost Function</strong></a></p></li>
-<li><p><a class="reference internal" href="#gradient-descent" id="id9"><strong>Gradient Descent</strong></a></p></li>
-<li><p><a class="reference internal" href="#summary" id="id10"><strong>Summary</strong></a></p></li>
+<li><p><a class="reference internal" href="#linear-regression-limitation" id="id2">Linear Regression Limitation</a></p></li>
+<li><p><a class="reference internal" href="#how-logsitic-regression-solves-the-problem" id="id3">How Logsitic Regression solves the problem</a></p></li>
+<li><p><a class="reference internal" href="#convex-and-non-convex-function" id="id4">Convex and Non-Convex function</a></p>
+<ul>
+<li><p><a class="reference internal" href="#convex-function" id="id5">Convex function</a></p></li>
+<li><p><a class="reference internal" href="#non-convex-function" id="id6">Non-convex function</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#why-linear-regression-fails-for-classification" id="id7"><strong>Why Linear Regression Fails for Classification</strong></a></p></li>
+<li><p><a class="reference internal" href="#solution-logistic-regression" id="id8"><strong>Solution: Logistic Regression</strong></a></p></li>
+<li><p><a class="reference internal" href="#cost-function" id="id9"><strong>Cost Function</strong></a></p></li>
+<li><p><a class="reference internal" href="#gradient-descent" id="id10"><strong>Gradient Descent</strong></a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id11"><strong>Summary</strong></a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
+<section id="logistic-regression">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">Logistic Regression</a><a class="headerlink" href="#logistic-regression" title="Link to this heading">#</a></h1>
 <section id="linear-regression-limitation">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">Linear Regression Limitation</a><a class="headerlink" href="#linear-regression-limitation" title="Link to this heading">#</a></h1>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Linear Regression Limitation</a><a class="headerlink" href="#linear-regression-limitation" title="Link to this heading">#</a></h2>
 <p>Linear regression is not suitable for classification because:</p>
 <ol class="arabic simple">
 <li><p><strong>Output Range</strong>:</p>
@@ -530,7 +552,7 @@ document.write(`
 <p>Because of these issues, <strong>logistic regression</strong> or <strong>classification-specific algorithms</strong> (e.g., SVM, decision trees) are preferred.</p>
 </section>
 <section id="how-logsitic-regression-solves-the-problem">
-<h1><a class="toc-backref" href="#id2" role="doc-backlink">How Logsitic Regression solves the problem</a><a class="headerlink" href="#how-logsitic-regression-solves-the-problem" title="Link to this heading">#</a></h1>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">How Logsitic Regression solves the problem</a><a class="headerlink" href="#how-logsitic-regression-solves-the-problem" title="Link to this heading">#</a></h2>
 <p>Logistic regression solves the problems of using linear regression for classification in these ways:</p>
 <ol class="arabic">
 <li><p><strong>Bounded Outputs</strong>:</p>
@@ -574,11 +596,11 @@ document.write(`
 </ul>
 </section>
 <section id="convex-and-non-convex-function">
-<h1><a class="toc-backref" href="#id3" role="doc-backlink">Convex and Non-Convex function</a><a class="headerlink" href="#convex-and-non-convex-function" title="Link to this heading">#</a></h1>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Convex and Non-Convex function</a><a class="headerlink" href="#convex-and-non-convex-function" title="Link to this heading">#</a></h2>
 <p>A <strong>convex function</strong> has a bowl-shaped curve, while a <strong>non-convex function</strong> can have multiple dips and peaks.</p>
 <hr class="docutils" />
 <section id="convex-function">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Convex function</a><a class="headerlink" href="#convex-function" title="Link to this heading">#</a></h2>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Convex function</a><a class="headerlink" href="#convex-function" title="Link to this heading">#</a></h3>
 <ul>
 <li><p><strong>Definition:</strong>
 A function <span class="math notranslate nohighlight">\(f(x)\)</span> is convex if for any two points <span class="math notranslate nohighlight">\(x_1, x_2\)</span> in its domain and any <span class="math notranslate nohighlight">\(\lambda \in [0,1]\)</span>:</p>
@@ -604,7 +626,7 @@ A function <span class="math notranslate nohighlight">\(f(x)\)</span> is convex 
 </section>
 <hr class="docutils" />
 <section id="non-convex-function">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Non-convex function</a><a class="headerlink" href="#non-convex-function" title="Link to this heading">#</a></h2>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Non-convex function</a><a class="headerlink" href="#non-convex-function" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Definition:</strong> Fails the convex inequality above.</p></li>
 <li><p><strong>Visual property:</strong> The curve has <strong>multiple local minima/maxima</strong>.</p></li>
@@ -726,8 +748,9 @@ A function <span class="math notranslate nohighlight">\(f(x)\)</span> is convex 
 </div>
 </div>
 </section>
+</section>
 <section id="why-linear-regression-fails-for-classification">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink"><strong>Why Linear Regression Fails for Classification</strong></a><a class="headerlink" href="#why-linear-regression-fails-for-classification" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink"><strong>Why Linear Regression Fails for Classification</strong></a><a class="headerlink" href="#why-linear-regression-fails-for-classification" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Outliers:</strong> The best-fit line can be heavily influenced by extreme values.</p></li>
 <li><p><strong>Output Range:</strong> Linear regression can produce outputs less than 0 or greater than 1, which are invalid for probabilities.</p></li>
@@ -735,7 +758,7 @@ A function <span class="math notranslate nohighlight">\(f(x)\)</span> is convex 
 </section>
 <hr class="docutils" />
 <section id="solution-logistic-regression">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink"><strong>Solution: Logistic Regression</strong></a><a class="headerlink" href="#solution-logistic-regression" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink"><strong>Solution: Logistic Regression</strong></a><a class="headerlink" href="#solution-logistic-regression" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apply a <strong>squashing function</strong> to the linear output to constrain predictions between 0 and 1.</p></li>
 <li><p>The <strong>sigmoid (logistic) function</strong> is used:</p></li>
@@ -765,7 +788,7 @@ h_\theta(x) = \sigma(\theta_0 + \theta_1 x_1 + \theta_2 x_2 + \dots)
 </section>
 <hr class="docutils" />
 <section id="cost-function">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink"><strong>Cost Function</strong></a><a class="headerlink" href="#cost-function" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink"><strong>Cost Function</strong></a><a class="headerlink" href="#cost-function" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Linear regression cost function leads to <strong>non-convexity</strong> when combined with sigmoid, causing <strong>local minima</strong>.</p></li>
 <li><p>Logistic regression uses <strong>log loss (cross-entropy)</strong> for convexity:</p></li>
@@ -791,7 +814,7 @@ J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} \big[ y^{(i)} \log(h_\theta(x^{(i)})) + 
 </section>
 <hr class="docutils" />
 <section id="gradient-descent">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink"><strong>Gradient Descent</strong></a><a class="headerlink" href="#gradient-descent" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink"><strong>Gradient Descent</strong></a><a class="headerlink" href="#gradient-descent" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Parameter update rule:</p></li>
 </ul>
@@ -806,7 +829,7 @@ J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} \big[ y^{(i)} \log(h_\theta(x^{(i)})) + 
 </section>
 <hr class="docutils" />
 <section id="summary">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink"><strong>Summary</strong></a><a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink"><strong>Summary</strong></a><a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Fit a linear model: <span class="math notranslate nohighlight">\(\theta_0 + \theta_1 x_1 + \dots\)</span></p></li>
 <li><p>Apply <strong>sigmoid activation</strong> to squash outputs between 0 and 1.</p></li>
@@ -814,7 +837,27 @@ J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} \big[ y^{(i)} \log(h_\theta(x^{(i)})) + 
 <li><p>Optimize parameters using <strong>gradient descent</strong>.</p></li>
 <li><p>Predictions can now be interpreted as <strong>probabilities</strong> for classification.</p></li>
 </ol>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Click here for Sections</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_part.html">Assumtpions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_part.html">Intiution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_part.html">Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_part.html">Cost Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_part.html">Performance Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_part.html">One-vs-Rest (OVR) Logistic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_part.html">Handling Imabalance dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HyperParameter_Tuning/overview.html">Hyperparameter Tuning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HyperParameter_Tuning/01_part.html">Evaluation Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HyperParameter_Tuning/02_part.html">Cross Validation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -847,6 +890,24 @@ J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} \big[ y^{(i)} \log(h_\theta(x^{(i)})) + 
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../Linear_Regression/Hyperparameter_Tuning/08_part.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Handle Overfitting</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="01_part.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assumtpions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -863,20 +924,19 @@ J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} \big[ y^{(i)} \log(h_\theta(x^{(i)})) + 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Linear Regression Limitation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-logsitic-regression-solves-the-problem">How Logsitic Regression solves the problem</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-and-non-convex-function">Convex and Non-Convex function</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-function">Convex function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-convex-function">Non-convex function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-limitation">Linear Regression Limitation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-logsitic-regression-solves-the-problem">How Logsitic Regression solves the problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-and-non-convex-function">Convex and Non-Convex function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-function">Convex function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-convex-function">Non-convex function</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-linear-regression-fails-for-classification"><strong>Why Linear Regression Fails for Classification</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-logistic-regression"><strong>Solution: Logistic Regression</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function"><strong>Cost Function</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent"><strong>Gradient Descent</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary"><strong>Summary</strong></a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
