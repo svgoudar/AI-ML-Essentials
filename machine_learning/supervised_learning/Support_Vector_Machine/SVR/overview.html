@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SVR &#8212; My sample book</title>
+    <title>SVR &#8212; Machine Learning Handbook</title>
   
   
   
@@ -173,8 +173,8 @@
       
     
     
-    <img src="../../../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="../../../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="../../../../_static/logo.png" class="logo__image only-light" alt="Machine Learning Handbook - Home"/>
+    <script>document.write(`<img src="../../../../_static/logo.png" class="logo__image only-dark" alt="Machine Learning Handbook - Home"/>`);</script>
   
   
 </a></div>
@@ -510,8 +510,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="svr">
-<h1>SVR<a class="headerlink" href="#svr" title="Link to this heading">#</a></h1>
+  <nav class="contents" id="contents" role="doc-toc">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#svr" id="id1">SVR</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-core-idea-insensitive-tube" id="id2">The Core Idea (ε-insensitive Tube)</a></p></li>
+<li><p><a class="reference internal" href="#mathematical-formulation" id="id3">Mathematical Formulation</a></p></li>
+<li><p><a class="reference internal" href="#optimization-problem" id="id4">Optimization Problem:</a></p></li>
+<li><p><a class="reference internal" href="#explanation-of-terms" id="id5">Explanation of Terms:</a></p></li>
+<li><p><a class="reference internal" href="#hyperparameters-in-svr" id="id6">Hyperparameters in SVR</a></p></li>
+<li><p><a class="reference internal" href="#kernels-in-svr" id="id7">Kernels in SVR</a></p></li>
+<li><p><a class="reference internal" href="#example-in-python-scikit-learn" id="id8">Example in Python (Scikit-learn)</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="svr">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">SVR</a><a class="headerlink" href="#svr" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Support Vector Regression (SVR)</strong> is an application of Support Vector Machines (SVM) for <strong>regression problems</strong>.</p></li>
 <li><p>Instead of predicting class labels, SVR predicts <strong>continuous values</strong>.</p></li>
@@ -519,7 +535,7 @@ document.write(`
 </ul>
 <hr class="docutils" />
 <section id="the-core-idea-insensitive-tube">
-<h2>The Core Idea (ε-insensitive Tube)<a class="headerlink" href="#the-core-idea-insensitive-tube" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">The Core Idea (ε-insensitive Tube)</a><a class="headerlink" href="#the-core-idea-insensitive-tube" title="Link to this heading">#</a></h2>
 <p>SVR introduces the concept of an <strong>ε-tube</strong>:</p>
 <ul class="simple">
 <li><p>Predictions within ±ε from the true value are considered “good enough” → no penalty.</p></li>
@@ -528,7 +544,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="mathematical-formulation">
-<h2>Mathematical Formulation<a class="headerlink" href="#mathematical-formulation" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Mathematical Formulation</a><a class="headerlink" href="#mathematical-formulation" title="Link to this heading">#</a></h2>
 <p>We want to find a function:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -537,7 +553,7 @@ f(x) = w^T \phi(x) + b
 <p>that predicts targets <span class="math notranslate nohighlight">\(y\)</span> given features <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </section>
 <section id="optimization-problem">
-<h2>Optimization Problem:<a class="headerlink" href="#optimization-problem" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Optimization Problem:</a><a class="headerlink" href="#optimization-problem" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[
 \min_{w, b, \xi, \xi^*} \quad \frac{1}{2}\|w\|^2 + C \sum_{i=1}^N (\xi_i + \xi_i^*)
@@ -558,7 +574,7 @@ w^T \phi(x_i) + b - y_i \leq \epsilon + \xi_i^*
 </section>
 <hr class="docutils" />
 <section id="explanation-of-terms">
-<h2>Explanation of Terms:<a class="headerlink" href="#explanation-of-terms" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Explanation of Terms:</a><a class="headerlink" href="#explanation-of-terms" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\frac{1}{2}\|w\|^2\)</span>: margin maximization (flatness of the function).</p></li>
 <li><p><span class="math notranslate nohighlight">\(C\)</span>: regularization parameter, controls penalty for points outside the tube.</p></li>
@@ -569,7 +585,7 @@ w^T \phi(x_i) + b - y_i \leq \epsilon + \xi_i^*
 </section>
 <hr class="docutils" />
 <section id="hyperparameters-in-svr">
-<h2>Hyperparameters in SVR<a class="headerlink" href="#hyperparameters-in-svr" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Hyperparameters in SVR</a><a class="headerlink" href="#hyperparameters-in-svr" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>C</strong> → Regularization (trade-off between flatness vs tolerance to errors).</p></li>
 <li><p><strong>ε (epsilon)</strong> → Size of the ε-tube. Larger ε → simpler model, fewer support vectors.</p></li>
@@ -578,7 +594,7 @@ w^T \phi(x_i) + b - y_i \leq \epsilon + \xi_i^*
 </section>
 <hr class="docutils" />
 <section id="kernels-in-svr">
-<h2>Kernels in SVR<a class="headerlink" href="#kernels-in-svr" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Kernels in SVR</a><a class="headerlink" href="#kernels-in-svr" title="Link to this heading">#</a></h2>
 <p>Just like SVC, SVR can use different kernels:</p>
 <ul class="simple">
 <li><p><strong>Linear</strong>: best for linear data.</p></li>
@@ -588,7 +604,7 @@ w^T \phi(x_i) + b - y_i \leq \epsilon + \xi_i^*
 </section>
 <hr class="docutils" />
 <section id="example-in-python-scikit-learn">
-<h2>Example in Python (Scikit-learn)<a class="headerlink" href="#example-in-python-scikit-learn" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Example in Python (Scikit-learn)</a><a class="headerlink" href="#example-in-python-scikit-learn" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -621,7 +637,7 @@ w^T \phi(x_i) + b - y_i \leq \epsilon + \xi_i^*
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/ed6d945e9e61aa13cb39e48fd51c82bcf5f8e730d6ae804f203e9c9fc9ba921c.png" src="../../../../_images/ed6d945e9e61aa13cb39e48fd51c82bcf5f8e730d6ae804f203e9c9fc9ba921c.png" />
+<img alt="../../../../_images/42fe162718d25de0442f755444bc584fd52b85cc33493a37dac40b2448b21ce9.png" src="../../../../_images/42fe162718d25de0442f755444bc584fd52b85cc33493a37dac40b2448b21ce9.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -631,7 +647,7 @@ w^T \phi(x_i) + b - y_i \leq \epsilon + \xi_i^*
 <li><p><strong>C</strong> → controls penalty for errors outside ε.</p></li>
 <li><p><strong>ε</strong> → defines tolerance zone for errors.</p></li>
 <li><p><strong>γ</strong> → controls influence range of training points in nonlinear kernels.</p></li>
-<li><p>Flexible → can capture both linear and nonlinear regression patterns.</p></li>
+<li><p>Flexible → can capture both linear and nonlinear regression patterns</p></li>
 </ul>
 </section>
 <div class="toctree-wrapper compound">
@@ -723,7 +739,7 @@ w^T \phi(x_i) + b - y_i \leq \epsilon + \xi_i^*
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By svgoudar
 </p>
 
   </div>
