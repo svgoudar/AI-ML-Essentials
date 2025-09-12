@@ -30,3 +30,4 @@ sphinx-copybutton
 sphinx-hoverxref
 sphinx-autobuild
 statsmodels
+sphinx_sitemap

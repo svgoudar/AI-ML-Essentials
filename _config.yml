@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
+title: Machine Learning Handbook
+author: svgoudar
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -54,6 +54,8 @@ sphinx:
   recursive_update: true
   config:
     html_theme_options:
+      page_width: "100%"     # expands content
+      content_width: "100%"  # expands article tex
       use_edit_page_button: True
       use_repository_button: True
       use_issues_button: True
@@ -137,6 +139,7 @@ sphinx:
     - sphinx_design
     - sphinx_copybutton
     - hoverxref.extension
+    - sphinx_sitemap
 
 # hoverxref_role_types:
 #   ref: tooltip
