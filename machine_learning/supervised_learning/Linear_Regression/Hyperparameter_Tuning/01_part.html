@@ -215,7 +215,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../09_part.html">Bias–Variance Tradeoff</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="overview.html">Hyperparameter Tuning in Linear Regression</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Regularization &amp; Generalization</a></li>
-
 <li class="toctree-l3"><a class="reference internal" href="02_part.html">Lasso Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="03_part.html">Ridge Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="04_part.html">Elastic Net Regression</a></li>
@@ -492,21 +491,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Regularization &amp; Generalization</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization-in-ml">Regularization in ML</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-regularization">Types of Regularization</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization-in-ml">Regularization in ML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-regularization">Types of Regularization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-in-ml">Generalization in ML</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-important">Why is it important?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relationship-with-regularization">Relationship with Regularization</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-intuition">Visual Intuition</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-intuition">🔹 Visual Intuition</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -522,20 +515,17 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference internal" href="#regularization-generalization" id="id1">Regularization &amp; Generalization</a></p>
 <ul>
-<li><p><a class="reference internal" href="#regularization-in-ml" id="id2">Regularization in ML</a></p>
-<ul>
+<li><p><a class="reference internal" href="#regularization-in-ml" id="id2">Regularization in ML</a></p></li>
 <li><p><a class="reference internal" href="#types-of-regularization" id="id3">Types of Regularization</a></p></li>
-</ul>
-</li>
 <li><p><a class="reference internal" href="#generalization-in-ml" id="id4">Generalization in ML</a></p>
 <ul>
 <li><p><a class="reference internal" href="#why-is-it-important" id="id5">Why is it important?</a></p></li>
 <li><p><a class="reference internal" href="#relationship-with-regularization" id="id6">Relationship with Regularization</a></p></li>
 </ul>
 </li>
+<li><p><a class="reference internal" href="#visual-intuition" id="id7">Visual Intuition</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#visual-intuition" id="id7">🔹 Visual Intuition</a></p></li>
 </ul>
 </nav>
 <section class="tex2jax_ignore mathjax_ignore" id="regularization-generalization">
@@ -547,8 +537,9 @@ document.write(`
 <li><p>In ML, models (like Linear Regression, Neural Networks) may learn <strong>too much noise</strong> from training data → they fit training data perfectly but fail on unseen data.</p></li>
 <li><p>Regularization reduces this by penalizing <strong>large weights</strong>.</p></li>
 </ul>
+</section>
 <section id="types-of-regularization">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">Types of Regularization</a><a class="headerlink" href="#types-of-regularization" title="Link to this heading">#</a></h3>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Types of Regularization</a><a class="headerlink" href="#types-of-regularization" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>L1 (Lasso)</strong> → penalty = sum of absolute values of weights → forces some weights to <strong>zero</strong> (feature selection).</p></li>
 <li><p><strong>L2 (Ridge)</strong> → penalty = sum of squares of weights → shrinks coefficients but keeps all features.</p></li>
@@ -565,7 +556,6 @@ Loss = \text{MSE} + \lambda R(\beta)
 <li><p><span class="math notranslate nohighlight">\(R(\beta)\)</span> = penalty term (L1/L2/ElasticNet)</p></li>
 </ul>
 <p>✅ Effect: keeps weights small → simpler model → less variance.</p>
-</section>
 </section>
 <hr class="docutils" />
 <section id="generalization-in-ml">
@@ -586,10 +576,9 @@ Loss = \text{MSE} + \lambda R(\beta)
 </ul>
 </section>
 </section>
-</section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="visual-intuition">
-<h1><a class="toc-backref" href="#id7" role="doc-backlink">🔹 Visual Intuition</a><a class="headerlink" href="#visual-intuition" title="Link to this heading">#</a></h1>
+<section id="visual-intuition">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Visual Intuition</a><a class="headerlink" href="#visual-intuition" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Underfitting (high bias)</strong>: model too simple → poor training &amp; test accuracy.</p></li>
 <li><p><strong>Overfitting (high variance)</strong>: model too complex → high training accuracy, poor test accuracy.</p></li>
@@ -603,6 +592,7 @@ Loss = \text{MSE} + \lambda R(\beta)
 <li><p><strong>Generalization</strong> = model’s ability to work well on unseen data.</p></li>
 <li><p>Regularization → improves generalization.</p></li>
 </ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -669,21 +659,15 @@ Loss = \text{MSE} + \lambda R(\beta)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Regularization &amp; Generalization</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization-in-ml">Regularization in ML</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-regularization">Types of Regularization</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization-in-ml">Regularization in ML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-regularization">Types of Regularization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-in-ml">Generalization in ML</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-important">Why is it important?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relationship-with-regularization">Relationship with Regularization</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-intuition">Visual Intuition</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-intuition">🔹 Visual Intuition</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>

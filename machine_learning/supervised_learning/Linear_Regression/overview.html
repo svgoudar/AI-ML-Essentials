@@ -215,7 +215,6 @@
 <li class="toctree-l2"><a class="reference internal" href="09_part.html">Bias–Variance Tradeoff</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="Hyperparameter_Tuning/overview.html">Hyperparameter Tuning in Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/01_part.html">Regularization &amp; Generalization</a></li>
-
 <li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/02_part.html">Lasso Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/03_part.html">Ridge Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/04_part.html">Elastic Net Regression</a></li>
@@ -510,10 +509,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="linear-regression">
-<h1>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
+  <nav class="contents" id="contents" role="doc-toc">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#linear-regression" id="id1">Linear Regression</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-is-linear-regression" id="id2">What is Linear Regression</a></p></li>
+<li><p><a class="reference internal" href="#equation-of-linear-regression" id="id3">Equation of Linear Regression</a></p></li>
+<li><p><a class="reference internal" href="#key-concepts" id="id4"><strong>Key Concepts</strong></a></p></li>
+<li><p><a class="reference internal" href="#types-of-linear-regression" id="id5">Types of Linear Regression</a></p></li>
+<li><p><a class="reference internal" href="#assumptions" id="id6">Assumptions</a></p></li>
+<li><p><a class="reference internal" href="#performance-metrics" id="id7">Performance Metrics</a></p></li>
+<li><p><a class="reference internal" href="#applications" id="id8">Applications</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="linear-regression">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">Linear Regression</a><a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
 <section id="what-is-linear-regression">
-<h2>What is Linear Regression<a class="headerlink" href="#what-is-linear-regression" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">What is Linear Regression</a><a class="headerlink" href="#what-is-linear-regression" title="Link to this heading">#</a></h2>
 <p>Linear Regression is one of the most fundamental and widely used <strong>supervised learning algorithms</strong> in machine learning.</p>
 <ul class="simple">
 <li><p>It is used when the <strong>target variable (Y)</strong> is <strong>continuous</strong> (e.g., predicting salary, house price, temperature).</p></li>
@@ -522,7 +537,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="equation-of-linear-regression">
-<h2>Equation of Linear Regression<a class="headerlink" href="#equation-of-linear-regression" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Equation of Linear Regression</a><a class="headerlink" href="#equation-of-linear-regression" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Simple Linear Regression (one feature):</strong></p></li>
 </ul>
@@ -546,7 +561,7 @@ Y = \theta_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n + \epsilon
 </section>
 <hr class="docutils" />
 <section id="key-concepts">
-<h2><strong>Key Concepts</strong><a class="headerlink" href="#key-concepts" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><strong>Key Concepts</strong></a><a class="headerlink" href="#key-concepts" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Hypothesis Function</strong> → Predicts Y from X</p></li>
 <li><p><strong>Cost Function (MSE)</strong> → Measures error between predictions and actual values</p></li>
@@ -561,7 +576,7 @@ J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2
 </section>
 <hr class="docutils" />
 <section id="types-of-linear-regression">
-<h2>Types of Linear Regression<a class="headerlink" href="#types-of-linear-regression" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Types of Linear Regression</a><a class="headerlink" href="#types-of-linear-regression" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Simple Linear Regression</strong> → One input feature</p></li>
 <li><p><strong>Multiple Linear Regression</strong> → More than one input feature</p></li>
@@ -571,7 +586,7 @@ J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2
 </section>
 <hr class="docutils" />
 <section id="assumptions">
-<h2>Assumptions<a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Assumptions</a><a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h2>
 <p>Linear regression relies on assumptions:</p>
 <ol class="arabic simple">
 <li><p>Linearity → Relationship between X and Y is linear</p></li>
@@ -583,7 +598,7 @@ J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2
 </section>
 <hr class="docutils" />
 <section id="performance-metrics">
-<h2>Performance Metrics<a class="headerlink" href="#performance-metrics" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Performance Metrics</a><a class="headerlink" href="#performance-metrics" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>MSE (Mean Squared Error)</strong></p></li>
 <li><p><strong>RMSE (Root Mean Squared Error)</strong></p></li>
@@ -593,7 +608,7 @@ J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2
 </section>
 <hr class="docutils" />
 <section id="applications">
-<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Applications</a><a class="headerlink" href="#applications" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Predicting <strong>house prices</strong></p></li>
 <li><p>Estimating <strong>sales vs. advertising budget</strong></p></li>
@@ -620,7 +635,17 @@ Linear Regression is the foundation of regression algorithms. It tries to fit th
 <li class="toctree-l1"><a class="reference internal" href="07_part.html">Performance Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_part.html">OLS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_part.html">Bias–Variance Tradeoff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Hyperparameter_Tuning/overview.html">Hyperparameter Tuning in Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hyperparameter_Tuning/overview.html">Hyperparameter Tuning in Linear Regression</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/01_part.html">Regularization &amp; Generalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/02_part.html">Lasso Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/03_part.html">Ridge Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/04_part.html">Elastic Net Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/05_part.html">Workflow of Regularized Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/06_part.html">Cross-Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/07_part.html">Hyperparameter Tuning methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/08_part.html">Handle Overfitting</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>

@@ -496,9 +496,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-hyperparameters-and-their-intuition">Key Hyperparameters and Their Intuition</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-c-regularization-parameter">(a) <strong>C – Regularization parameter</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-epsilon-tube-width">(b) <strong>ε (Epsilon – Tube width)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-gamma-kernel-coefficient-for-rbf-poly-kernels">(c) <strong>γ (Gamma – Kernel coefficient, for RBF/poly kernels)</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-gamma-kernel-coefficient-for-rbf-poly-kernels">(c) <strong>γ (Gamma – Kernel coefficient, for RBF/poly kernels)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-hyperparameters">Interaction Between Hyperparameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-intuition">Visual Intuition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-strategy">Tuning Strategy</a></li>
@@ -523,9 +523,9 @@ document.write(`
 <ul>
 <li><p><a class="reference internal" href="#a-c-regularization-parameter" id="id4">(a) <strong>C – Regularization parameter</strong></a></p></li>
 <li><p><a class="reference internal" href="#b-epsilon-tube-width" id="id5">(b) <strong>ε (Epsilon – Tube width)</strong></a></p></li>
-<li><p><a class="reference internal" href="#c-gamma-kernel-coefficient-for-rbf-poly-kernels" id="id6">(c) <strong>γ (Gamma – Kernel coefficient, for RBF/poly kernels)</strong></a></p></li>
 </ul>
 </li>
+<li><p><a class="reference internal" href="#c-gamma-kernel-coefficient-for-rbf-poly-kernels" id="id6">(c) <strong>γ (Gamma – Kernel coefficient, for RBF/poly kernels)</strong></a></p></li>
 <li><p><a class="reference internal" href="#interaction-between-hyperparameters" id="id7">Interaction Between Hyperparameters</a></p></li>
 <li><p><a class="reference internal" href="#visual-intuition" id="id8">Visual Intuition</a></p></li>
 <li><p><a class="reference internal" href="#tuning-strategy" id="id9">Tuning Strategy</a></p></li>
@@ -533,7 +533,7 @@ document.write(`
 </li>
 </ul>
 </nav>
-<section class="tex2jax_ignore mathjax_ignore" id="hyper-parameter-intiution">
+<section id="hyper-parameter-intiution">
 <h1><a class="toc-backref" href="#id1" role="doc-backlink">Hyper-Parameter Intiution</a><a class="headerlink" href="#hyper-parameter-intiution" title="Link to this heading">#</a></h1>
 <section id="reminder-what-svr-does">
 <h2><a class="toc-backref" href="#id2" role="doc-backlink">Reminder: What SVR Does</a><a class="headerlink" href="#reminder-what-svr-does" title="Link to this heading">#</a></h2>
@@ -568,16 +568,16 @@ document.write(`
 </ul>
 <p>📌 Intuition: ε = “How much error am I willing to ignore?”</p>
 </section>
+</section>
 <hr class="docutils" />
 <section id="c-gamma-kernel-coefficient-for-rbf-poly-kernels">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">(c) <strong>γ (Gamma – Kernel coefficient, for RBF/poly kernels)</strong></a><a class="headerlink" href="#c-gamma-kernel-coefficient-for-rbf-poly-kernels" title="Link to this heading">#</a></h3>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">(c) <strong>γ (Gamma – Kernel coefficient, for RBF/poly kernels)</strong></a><a class="headerlink" href="#c-gamma-kernel-coefficient-for-rbf-poly-kernels" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Defines the <strong>influence of each training point</strong> in the kernel space.</p></li>
 <li><p><strong>High γ</strong> → each point has very narrow influence → highly flexible, wiggly function (overfit).</p></li>
 <li><p><strong>Low γ</strong> → points have wide influence → smoother function (underfit).</p></li>
 </ul>
 <p>📌 Intuition: γ = “How far does one point’s influence reach?”</p>
-</section>
 </section>
 <hr class="docutils" />
 <section id="interaction-between-hyperparameters">
@@ -947,9 +947,9 @@ Adjusted R²: 0.806
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-hyperparameters-and-their-intuition">Key Hyperparameters and Their Intuition</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-c-regularization-parameter">(a) <strong>C – Regularization parameter</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-epsilon-tube-width">(b) <strong>ε (Epsilon – Tube width)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-gamma-kernel-coefficient-for-rbf-poly-kernels">(c) <strong>γ (Gamma – Kernel coefficient, for RBF/poly kernels)</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-gamma-kernel-coefficient-for-rbf-poly-kernels">(c) <strong>γ (Gamma – Kernel coefficient, for RBF/poly kernels)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-hyperparameters">Interaction Between Hyperparameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-intuition">Visual Intuition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-strategy">Tuning Strategy</a></li>

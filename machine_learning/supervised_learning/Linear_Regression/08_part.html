@@ -215,7 +215,6 @@
 <li class="toctree-l2"><a class="reference internal" href="09_part.html">Bias–Variance Tradeoff</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="Hyperparameter_Tuning/overview.html">Hyperparameter Tuning in Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/01_part.html">Regularization &amp; Generalization</a></li>
-
 <li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/02_part.html">Lasso Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/03_part.html">Ridge Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/04_part.html">Elastic Net Regression</a></li>
@@ -503,6 +502,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-summary">Impact Summary</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-ols-gradient-descent">DIfference between OLS  &amp; Gradient Descent</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinary-least-squares-ols">Ordinary Least Squares (OLS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent-gd">Gradient Descent (GD)</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -529,6 +533,12 @@ document.write(`
 <li><p><a class="reference internal" href="#coefficients-table" id="id8">Coefficients Table</a></p></li>
 <li><p><a class="reference internal" href="#residual-diagnostics" id="id9">Residual Diagnostics</a></p></li>
 <li><p><a class="reference internal" href="#impact-summary" id="id10">Impact Summary</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#difference-between-ols-gradient-descent" id="id11">DIfference between OLS  &amp; Gradient Descent</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ordinary-least-squares-ols" id="id12">Ordinary Least Squares (OLS)</a></p></li>
+<li><p><a class="reference internal" href="#gradient-descent-gd" id="id13">Gradient Descent (GD)</a></p></li>
 </ul>
 </li>
 </ul>
@@ -662,8 +672,8 @@ OLS gives us a <strong>mathematical way</strong> to find the regression line by 
 Dep. Variable:                      y   R-squared:                       0.686
 Model:                            OLS   Adj. R-squared:                  0.680
 Method:                 Least Squares   F-statistic:                     105.1
-Date:                Thu, 11 Sep 2025   Prob (F-statistic):           1.12e-13
-Time:                        23:43:52   Log-Likelihood:                -128.12
+Date:                Fri, 12 Sep 2025   Prob (F-statistic):           1.12e-13
+Time:                        19:51:52   Log-Likelihood:                -128.12
 No. Observations:                  50   AIC:                             260.2
 Df Residuals:                      48   BIC:                             264.1
 Df Model:                           1                                         
@@ -686,9 +696,7 @@ Notes:
 </div>
 </div>
 </div>
-<p>Explaining every field in your <strong>OLS Regression Results</strong> output with its meaning and impact:</p>
 </section>
-<hr class="docutils" />
 <section id="interpretation-of-summary">
 <h2><a class="toc-backref" href="#id6" role="doc-backlink">Interpretation of summary()</a><a class="headerlink" href="#interpretation-of-summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -795,8 +803,96 @@ Notes:
 <li><p>Residual diagnostics confirm <strong>assumptions of OLS hold</strong> (normality, independence, no multicollinearity).</p></li>
 <li><p>About <strong>69% of variation</strong> in <code class="docutils literal notranslate"><span class="pre">y</span></code> is explained. Remaining 31% is due to noise or omitted variables.</p></li>
 </ul>
+</section>
+</section>
+<section id="difference-between-ols-gradient-descent">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">DIfference between OLS  &amp; Gradient Descent</a><a class="headerlink" href="#difference-between-ols-gradient-descent" title="Link to this heading">#</a></h2>
+<section id="ordinary-least-squares-ols">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Ordinary Least Squares (OLS)</a><a class="headerlink" href="#ordinary-least-squares-ols" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>Definition</strong>: A <strong>closed-form analytical solution</strong> to find regression coefficients (β) that minimize the sum of squared residuals (errors).</p></li>
+<li><p><strong>Formula</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \hat{\beta} = (X^TX)^{-1}X^Ty
+  \]</div>
+<p>where <span class="math notranslate nohighlight">\(X\)</span> = features matrix, <span class="math notranslate nohighlight">\(y\)</span> = target vector.</p>
+</li>
+<li><p><strong>Characteristics</strong>:</p>
+<ul class="simple">
+<li><p>Direct computation, <strong>no iteration</strong>.</p></li>
+<li><p><strong>Fast</strong> for small datasets with few features.</p></li>
+<li><p>Requires computing the <strong>inverse of <span class="math notranslate nohighlight">\(X^TX\)</span></strong>, which can be expensive if the dataset has <strong>very high dimensionality</strong>.</p></li>
+<li><p>Works best when features are not highly correlated (multicollinearity can cause instability).</p></li>
+</ul>
+</li>
+</ul>
+</section>
 <hr class="docutils" />
-<p>Do you want me to also show how to <strong>read this summary in plain English</strong> (like a narrative explanation of what the model is saying)?</p>
+<section id="gradient-descent-gd">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Gradient Descent (GD)</a><a class="headerlink" href="#gradient-descent-gd" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>Definition</strong>: An <strong>iterative optimization algorithm</strong> that minimizes the cost function (e.g., Mean Squared Error) by gradually updating coefficients in the opposite direction of the gradient.</p></li>
+<li><p><strong>Update rule</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \beta_j := \beta_j - \alpha \frac{\partial J(\beta)}{\partial \beta_j}
+  \]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> = learning rate.</p>
+</li>
+<li><p><strong>Characteristics</strong>:</p>
+<ul class="simple">
+<li><p>Works even when <strong>closed-form solutions are not feasible</strong> (e.g., large-scale data, complex models).</p></li>
+<li><p>Handles <strong>very high-dimensional data</strong> efficiently since it avoids matrix inversion.</p></li>
+<li><p>Requires choosing hyperparameters (learning rate, iterations).</p></li>
+<li><p>May converge slowly or get stuck in local minima (for non-convex problems).</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p><strong>Key Differences</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>OLS (Closed-form)</p></th>
+<th class="head"><p>Gradient Descent (Iterative)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Solution type</strong></p></td>
+<td><p>Exact (analytical)</p></td>
+<td><p>Approximate (iterative)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Computation</strong></p></td>
+<td><p>Requires matrix inversion <span class="math notranslate nohighlight">\((X^TX)^{-1}\)</span></p></td>
+<td><p>Updates step by step using gradients</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Speed</strong></p></td>
+<td><p>Fast for small/medium datasets</p></td>
+<td><p>Scales better for huge datasets</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Memory</strong></p></td>
+<td><p>Needs to store large matrices</p></td>
+<td><p>Works in batches (mini-batch GD)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Use case</strong></p></td>
+<td><p>Low-dimensional, small data</p></td>
+<td><p>Large-scale, high-dimensional, online learning</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Summary</strong>:</p>
+<ul class="simple">
+<li><p>Use <strong>OLS</strong> when the dataset is small, with few features → quick and exact.</p></li>
+<li><p>Use <strong>Gradient Descent</strong> when the dataset is very large or high-dimensional → scalable and flexible.</p></li>
+</ul>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/b9f43114cf7e9d51e77c4d4fe8fffc964ebba40401b0dcd9865b02988beacf3d.png" src="../../../_images/b9f43114cf7e9d51e77c4d4fe8fffc964ebba40401b0dcd9865b02988beacf3d.png" />
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -874,6 +970,11 @@ Notes:
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficients-table">Coefficients Table</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-diagnostics">Residual Diagnostics</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-summary">Impact Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-ols-gradient-descent">DIfference between OLS  &amp; Gradient Descent</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinary-least-squares-ols">Ordinary Least Squares (OLS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent-gd">Gradient Descent (GD)</a></li>
 </ul>
 </li>
 </ul>
