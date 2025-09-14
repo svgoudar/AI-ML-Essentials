@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Decision Tree &#8212; Machine Learning Handbook</title>
+    <title>Out-of-Bag (OOB) Evaluation &#8212; Machine Learning Handbook</title>
   
   
   
@@ -77,11 +77,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'machine_learning/supervised_learning/Decision_Tree/overview';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'machine_learning/supervised_learning/Random_Forest/05_part';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Decision Tree Regressor" href="DTR/overview.html" />
-    <link rel="prev" title="Regression &amp; Classification" href="../KNN/09_part.html" />
+    <link rel="next" title="Cost Function" href="06_part.html" />
+    <link rel="prev" title="Workflows" href="04_part.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -293,43 +293,43 @@
 </ul>
 </details></li>
 </ul>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Decision Tree</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="DTR/overview.html">Decision Tree Regressor</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="DTR/01_part.html">Cost Functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DTR/02_part.html">Performance Metrics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DTR/03_part.html">Hyperparameter tuning</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="DTC/overview.html">Decision Tree Classifier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="DTC/01_part.html">Cost Function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DTC/02_part.html">Performance Metrics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DTC/03_part.html">Hyperparameters Tuning</a></li>
-
-
-
-<li class="toctree-l3"><a class="reference internal" href="DTC/04_part.html">Handle Underfitting/Overfitting</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2"><a class="reference internal" href="01_part.html">Assumptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_part.html">Purity Measures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03_part.html">Hyperparameter Tuning in Decision Tree</a></li>
-
-
-
-
-</ul>
-</details></li>
-</ul>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Random_Forest/overview.html">Random Forest</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Random_Forest/01_part.html">Ensembling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Random_Forest/02_part.html">Assumptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Random_Forest/03_part.html">Intiution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Random_Forest/04_part.html">Workflows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Random_Forest/05_part.html">Out-of-Bag (OOB) Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Random_Forest/06_part.html">Cost Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Random_Forest/07_part.html">Hyperparameter Tuning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Decision_Tree/overview.html">Decision Tree</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Decision_Tree/DTR/overview.html">Decision Tree Regressor</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTR/01_part.html">Cost Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTR/02_part.html">Performance Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTR/03_part.html">Hyperparameter tuning</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Decision_Tree/DTC/overview.html">Decision Tree Classifier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTC/01_part.html">Cost Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTC/02_part.html">Performance Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTC/03_part.html">Hyperparameters Tuning</a></li>
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTC/04_part.html">Handle Underfitting/Overfitting</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision_Tree/01_part.html">Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision_Tree/02_part.html">Purity Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision_Tree/03_part.html">Hyperparameter Tuning in Decision Tree</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="overview.html">Random Forest</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_part.html">Ensembling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_part.html">Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_part.html">Intiution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_part.html">Workflows</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Out-of-Bag (OOB) Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_part.html">Cost Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_part.html">Hyperparameter Tuning</a></li>
 
 
 
@@ -389,7 +389,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/svgoudar/AI-ML-Essentials/blob/master/machine_learning/supervised_learning/Decision_Tree/overview.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/svgoudar/AI-ML-Essentials/blob/master/machine_learning/supervised_learning/Random_Forest/05_part.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -437,7 +437,7 @@
       
       
       
-      <li><a href="https://github.com/svgoudar/AI-ML-Essentials/issues/new?title=Issue%20on%20page%20%2Fmachine_learning/supervised_learning/Decision_Tree/overview.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/svgoudar/AI-ML-Essentials/issues/new?title=Issue%20on%20page%20%2Fmachine_learning/supervised_learning/Random_Forest/05_part.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -467,7 +467,7 @@
       
       
       
-      <li><a href="../../../_sources/machine_learning/supervised_learning/Decision_Tree/overview.ipynb" target="_blank"
+      <li><a href="../../../_sources/machine_learning/supervised_learning/Random_Forest/05_part.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -551,7 +551,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Decision Tree</h1>
+    <h1>Out-of-Bag (OOB) Evaluation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -561,25 +561,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intuition-decision-trees-as-conditional-statements"><strong>Intuition: Decision Trees as Conditional Statements</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-a-decision-tree"><strong>Constructing a Decision Tree</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-selecting-the-root-node">Step 1: Selecting the Root Node</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-metrics-for-splitting"><strong>Key Metrics for Splitting</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculating-entropy">Example: Calculating Entropy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-information-gain">Example: Information Gain</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-impure-nodes"><strong>Splitting Impure Nodes</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-next-steps"><strong>Conclusion and Next Steps</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intuition">Intuition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-decision-tree">Structure of a Decision Tree</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-tree-decide-where-to-split">How Does the Tree Decide Where to Split</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-classification">For Classification:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-regression">For Regression:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages">Disadvantages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-oob-evaluation-works"><strong>2. How OOB Evaluation Works</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-oob-evaluation"><strong>3. Advantages of OOB Evaluation</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oob-in-regression-vs-classification"><strong>4. OOB in Regression vs Classification</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-intuition"><strong>5. Example Intuition</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-enable-oob-in-scikit-learn"><strong>6. How to Enable OOB in Scikit-Learn</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
 </ul>
 </li>
 </ul>
@@ -596,264 +583,207 @@ document.write(`
   <nav class="contents" id="contents" role="doc-toc">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#decision-tree" id="id1">Decision Tree</a></p>
+<li><p><a class="reference internal" href="#out-of-bag-oob-evaluation" id="id1">Out-of-Bag (OOB) Evaluation</a></p>
 <ul>
-<li><p><a class="reference internal" href="#intuition-decision-trees-as-conditional-statements" id="id2"><strong>Intuition: Decision Trees as Conditional Statements</strong></a></p></li>
-<li><p><a class="reference internal" href="#constructing-a-decision-tree" id="id3"><strong>Constructing a Decision Tree</strong></a></p>
+<li><p><a class="reference internal" href="#how-oob-evaluation-works" id="id2"><strong>2. How OOB Evaluation Works</strong></a></p>
 <ul>
-<li><p><a class="reference internal" href="#step-1-selecting-the-root-node" id="id4">Step 1: Selecting the Root Node</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#key-metrics-for-splitting" id="id5"><strong>Key Metrics for Splitting</strong></a></p>
-<ul>
-<li><p><a class="reference internal" href="#example-calculating-entropy" id="id6">Example: Calculating Entropy</a></p></li>
-<li><p><a class="reference internal" href="#example-information-gain" id="id7">Example: Information Gain</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#splitting-impure-nodes" id="id8"><strong>Splitting Impure Nodes</strong></a></p></li>
-<li><p><a class="reference internal" href="#conclusion-and-next-steps" id="id9"><strong>Conclusion and Next Steps</strong></a></p></li>
-<li><p><a class="reference internal" href="#intuition" id="id10">Intuition</a></p></li>
-<li><p><a class="reference internal" href="#structure-of-a-decision-tree" id="id11">Structure of a Decision Tree</a></p></li>
-<li><p><a class="reference internal" href="#how-does-the-tree-decide-where-to-split" id="id12">How Does the Tree Decide Where to Split</a></p>
-<ul>
-<li><p><a class="reference internal" href="#for-classification" id="id13">For Classification:</a></p></li>
-<li><p><a class="reference internal" href="#for-regression" id="id14">For Regression:</a></p></li>
-<li><p><a class="reference internal" href="#advantages" id="id15">Advantages</a></p></li>
-<li><p><a class="reference internal" href="#disadvantages" id="id16">Disadvantages</a></p></li>
+<li><p><a class="reference internal" href="#advantages-of-oob-evaluation" id="id3"><strong>3. Advantages of OOB Evaluation</strong></a></p></li>
+<li><p><a class="reference internal" href="#oob-in-regression-vs-classification" id="id4"><strong>4. OOB in Regression vs Classification</strong></a></p></li>
+<li><p><a class="reference internal" href="#example-intuition" id="id5"><strong>5. Example Intuition</strong></a></p></li>
+<li><p><a class="reference internal" href="#how-to-enable-oob-in-scikit-learn" id="id6"><strong>6. How to Enable OOB in Scikit-Learn</strong></a></p></li>
+<li><p><a class="reference internal" href="#interpretation" id="id7">Interpretation</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </nav>
-<section class="tex2jax_ignore mathjax_ignore" id="decision-tree">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">Decision Tree</a><a class="headerlink" href="#decision-tree" title="Link to this heading">#</a></h1>
-<p>A decision tree can solve both <strong>classification</strong> and <strong>regression</strong> problems.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="out-of-bag-oob-evaluation">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">Out-of-Bag (OOB) Evaluation</a><a class="headerlink" href="#out-of-bag-oob-evaluation" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p><strong>Entropy</strong></p></li>
-<li><p><strong>Gini Index</strong></p></li>
-<li><p><strong>Information Gain</strong></p></li>
+<li><p>In <strong>Random Forest</strong>, each tree is trained on a <strong>bootstrapped sample</strong> of the training data.</p></li>
+<li><p><strong>Bootstrapped sample:</strong> Randomly drawn <strong>with replacement</strong> → some observations appear multiple times, some <strong>don’t appear at all</strong>.</p></li>
+<li><p>The observations <strong>not included</strong> in a tree’s training set are called <strong>Out-of-Bag (OOB) samples</strong> for that tree.</p></li>
 </ul>
-<p>We’ll also briefly differentiate between the two major types of decision tree algorithms:</p>
+<p><strong>Intuition:</strong></p>
+<ul class="simple">
+<li><p>These OOB samples act as a <strong>validation set</strong> for that specific tree.</p></li>
+<li><p>We can use them to <strong>estimate prediction error without a separate validation set</strong>.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="how-oob-evaluation-works">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink"><strong>2. How OOB Evaluation Works</strong></a><a class="headerlink" href="#how-oob-evaluation-works" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>ID3 (Iterative Dichotomiser 3):</strong> Allows multiple splits at a node.</p></li>
-<li><p><strong>CART (Classification and Regression Tree):</strong> Restricts splits to binary decisions (used in libraries like <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>).</p></li>
+<li><p>Build a Random Forest with <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code> trees.</p></li>
+<li><p>For each tree, identify its OOB samples.</p></li>
+<li><p>Predict the OOB samples using that tree.</p></li>
+<li><p>For each observation in the training set:</p>
+<ul class="simple">
+<li><p>Average predictions from <strong>all trees where this observation was OOB</strong>.</p></li>
+</ul>
+</li>
+<li><p>Compare the averaged prediction to the true value → gives <strong>OOB error estimate</strong>.</p></li>
 </ol>
 <hr class="docutils" />
-<section id="intuition-decision-trees-as-conditional-statements">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink"><strong>Intuition: Decision Trees as Conditional Statements</strong></a><a class="headerlink" href="#intuition-decision-trees-as-conditional-statements" title="Link to this heading">#</a></h2>
-<p>Think of decision trees as an extension of simple conditional statements. For example, in Python:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">14</span>
-<span class="k">if</span> <span class="n">age</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The person is in school.&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="mi">15</span> <span class="o">&lt;=</span> <span class="n">age</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The person may be in college.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The person has passed college.&quot;</span><span class="p">)</span>
+<section id="advantages-of-oob-evaluation">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink"><strong>3. Advantages of OOB Evaluation</strong></a><a class="headerlink" href="#advantages-of-oob-evaluation" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Advantage</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>No separate validation set needed</strong></p></td>
+<td><p>Uses unused samples from bootstrapping to estimate error</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Unbiased error estimate</strong></p></td>
+<td><p>Each observation is tested only on trees that didn’t see it during training</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Efficient</strong></p></td>
+<td><p>Saves time and data (especially with small datasets)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Feature importance calculation</strong></p></td>
+<td><p>Can be computed using OOB predictions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="oob-in-regression-vs-classification">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink"><strong>4. OOB in Regression vs Classification</strong></a><a class="headerlink" href="#oob-in-regression-vs-classification" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Regression:</strong></p>
+<ul>
+<li><p>OOB error = Mean Squared Error (MSE) or R² of OOB predictions vs actual values.</p></li>
+</ul>
+</li>
+<li><p><strong>Classification:</strong></p>
+<ul>
+<li><p>OOB error = Fraction of misclassified OOB samples → similar to test accuracy.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="example-intuition">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink"><strong>5. Example Intuition</strong></a><a class="headerlink" href="#example-intuition" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Suppose we have <strong>10 training samples</strong> and build a tree with a bootstrapped sample of size 10.</p></li>
+<li><p>Random sampling may pick: <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">7,</span> <span class="pre">8]</span></code></p></li>
+<li><p><strong>OOB samples:</strong> <code class="docutils literal notranslate"><span class="pre">[9,</span> <span class="pre">10]</span></code> (not picked in this tree)</p></li>
+<li><p>These two samples are used to <strong>validate this tree</strong>.</p></li>
+<li><p>Repeat for all trees → average predictions for each sample where it was OOB → overall OOB error.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="how-to-enable-oob-in-scikit-learn">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink"><strong>6. How to Enable OOB in Scikit-Learn</strong></a><a class="headerlink" href="#how-to-enable-oob-in-scikit-learn" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">oob_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OOB R² score:&quot;</span><span class="p">,</span> <span class="n">rf</span><span class="o">.</span><span class="n">oob_score_</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This logic resembles how a decision tree splits data:</p>
+<p><strong>Note:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">oob_score_</span></code> gives <strong>R² for regression</strong> or <strong>accuracy for classification</strong> using OOB samples.</p></li>
+<li><p>Useful for <strong>quick evaluation</strong> without a separate validation set.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Key Takeaways</strong></p>
 <ol class="arabic simple">
-<li><p>Start with a <strong>root node</strong> (e.g., <code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">&lt;=</span> <span class="pre">14</span></code>).</p></li>
-<li><p>Branch into outcomes (e.g., <strong>Yes</strong> or <strong>No</strong>).</p></li>
-<li><p>Continue splitting based on new conditions until reaching a pure classification (e.g., “School,” “College”).</p></li>
+<li><p>OOB evaluation is a <strong>built-in cross-validation</strong> mechanism for Random Forest.</p></li>
+<li><p>Provides <strong>unbiased estimate of model performance</strong>.</p></li>
+<li><p>Reduces the need for <strong>extra validation splits</strong>, especially for small datasets.</p></li>
+<li><p>Works for <strong>both regression and classification</strong>.</p></li>
 </ol>
-<hr class="docutils" />
-</section>
-<section id="constructing-a-decision-tree">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink"><strong>Constructing a Decision Tree</strong></a><a class="headerlink" href="#constructing-a-decision-tree" title="Link to this heading">#</a></h2>
-<p>Let’s explore how a decision tree is built using a <strong>real-world dataset</strong>. Imagine a dataset with these features:</p>
-<ul class="simple">
-<li><p><strong>Outlook</strong> (Sunny, Overcast, Rainy)</p></li>
-<li><p><strong>Temperature</strong></p></li>
-<li><p><strong>Humidity</strong></p></li>
-<li><p><strong>Wind</strong>
-Our goal: Predict whether someone will <strong>Play Tennis</strong>.</p></li>
-</ul>
-<section id="step-1-selecting-the-root-node">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Step 1: Selecting the Root Node</a><a class="headerlink" href="#step-1-selecting-the-root-node" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Start by evaluating each feature. For instance, take <strong>Outlook</strong>.</p></li>
-<li><p>Count the occurrences:</p>
-<ul>
-<li><p><strong>Sunny:</strong> 2 Yes, 3 No</p></li>
-<li><p><strong>Overcast:</strong> 4 Yes, 0 No (Pure split)</p></li>
-<li><p><strong>Rainy:</strong> 3 Yes, 2 No</p></li>
-</ul>
-</li>
-<li><p>Notice that <strong>Sunny</strong> and <strong>Rainy</strong> are <strong>impure splits</strong> (contain both Yes and No), while <strong>Overcast</strong> is a <strong>pure split</strong>.</p></li>
-</ul>
-<hr class="docutils" />
-</section>
-</section>
-<section id="key-metrics-for-splitting">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink"><strong>Key Metrics for Splitting</strong></a><a class="headerlink" href="#key-metrics-for-splitting" title="Link to this heading">#</a></h2>
-<p>When splitting nodes, we use metrics like:</p>
-<ol class="arabic simple">
-<li><p><strong>Entropy:</strong> Measures the impurity in the dataset.</p></li>
-<li><p><strong>Information Gain:</strong> Determines how much uncertainty is reduced after a split.</p></li>
-<li><p><strong>Gini Index:</strong> Another measure of impurity, often used in CART.</p></li>
-</ol>
-<section id="example-calculating-entropy">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">Example: Calculating Entropy</a><a class="headerlink" href="#example-calculating-entropy" title="Link to this heading">#</a></h3>
-<p>For the root node:
-<span class="math notranslate nohighlight">\(
-\text{Entropy} = - \sum_{i=1}^{n} p_i \cdot \log_2(p_i)
-\)</span>
-Where<span class="math notranslate nohighlight">\( p_i\)</span> is the proportion of each class (Yes/No).</p>
-</section>
-<section id="example-information-gain">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Example: Information Gain</a><a class="headerlink" href="#example-information-gain" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(
-\text{Information Gain} = \text{Entropy (Parent)} - \text{Weighted Average Entropy (Child Nodes)}
-\)</span></p>
-<hr class="docutils" />
-</section>
-</section>
-<section id="splitting-impure-nodes">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink"><strong>Splitting Impure Nodes</strong></a><a class="headerlink" href="#splitting-impure-nodes" title="Link to this heading">#</a></h2>
-<p>For impure splits like <strong>Sunny (2 Yes, 3 No)</strong>:</p>
-<ol class="arabic simple">
-<li><p>Consider another feature (e.g., <strong>Temperature</strong>).</p></li>
-<li><p>Split further until achieving pure nodes or acceptable impurity.</p></li>
-</ol>
-<hr class="docutils" />
-</section>
-<section id="conclusion-and-next-steps">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink"><strong>Conclusion and Next Steps</strong></a><a class="headerlink" href="#conclusion-and-next-steps" title="Link to this heading">#</a></h2>
-<p>This process continues until:</p>
-<ul class="simple">
-<li><p>The tree reaches pure splits.</p></li>
-<li><p>Or further splits don’t improve the model significantly.</p></li>
-</ul>
-<p>A <strong>Decision Tree</strong> is a <strong>supervised learning algorithm</strong> used for both <strong>classification</strong> (predicting categories) and <strong>regression</strong> (predicting continuous values).
-It works like a flowchart:</p>
-<ul class="simple">
-<li><p>Each <strong>internal node</strong> represents a condition (feature test).</p></li>
-<li><p>Each <strong>branch</strong> represents the outcome of the condition.</p></li>
-<li><p>Each <strong>leaf node</strong> gives the final prediction (class label or numeric value).</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="intuition">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Intuition</a><a class="headerlink" href="#intuition" title="Link to this heading">#</a></h2>
-<p>Imagine you’re deciding whether to play outside:</p>
-<ul class="simple">
-<li><p>If it’s sunny → Yes</p></li>
-<li><p>If it’s rainy → Check if you have an umbrella → Yes or No</p></li>
-</ul>
-<p>This is exactly how decision trees work: <strong>split data into smaller subsets based on conditions</strong> until the subsets are “pure” (contain mostly one label).</p>
-</section>
-<hr class="docutils" />
-<section id="structure-of-a-decision-tree">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Structure of a Decision Tree</a><a class="headerlink" href="#structure-of-a-decision-tree" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Root Node</strong> → the first question/condition (best split).</p></li>
-<li><p><strong>Decision Nodes</strong> → intermediate questions.</p></li>
-<li><p><strong>Leaf Nodes</strong> → final output (prediction).</p></li>
-</ul>
-<p>Example (Classification):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         Weather?
-        /       \
-     Sunny      Rainy
-     /   \        \
-  Hot    Cold    Umbrella?
-   |       |     /       \
- Play   Don’t Play   Play   Don’t Play
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Import Libraries</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">mean_squared_error</span>
+
+<span class="c1"># Step 2: Create Sample Dataset</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Split into train and test set</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Step 3: Train Random Forest with OOB enabled</span>
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">oob_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Step 4: OOB predictions</span>
+<span class="n">oob_r2</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">oob_score_</span>
+<span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">test_r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OOB R² Score: </span><span class="si">{</span><span class="n">oob_r2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test Set R² Score: </span><span class="si">{</span><span class="n">test_r2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Step 5: Plot OOB vs Actual</span>
+<span class="c1"># Note: Scikit-learn doesn&#39;t provide direct OOB predictions array easily, so we&#39;ll visualize test predictions</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Test Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_pred_test</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predictions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Random Forest Predictions (Test R²=</span><span class="si">{</span><span class="n">test_r2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OOB R² Score: 0.70
+Test Set R² Score: 0.78
+</pre></div>
+</div>
+<img alt="../../../_images/25b15f8558a442d35ebeb9ba9d02a648d7f17cf4b7b8c7b1654b3ebbd932a2bc.png" src="../../../_images/25b15f8558a442d35ebeb9ba9d02a648d7f17cf4b7b8c7b1654b3ebbd932a2bc.png" />
+</div>
+</div>
 </section>
-<hr class="docutils" />
-<section id="how-does-the-tree-decide-where-to-split">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">How Does the Tree Decide Where to Split</a><a class="headerlink" href="#how-does-the-tree-decide-where-to-split" title="Link to this heading">#</a></h2>
-<p>At each step, the algorithm chooses the <strong>best feature and threshold</strong> to split the data.
-It uses <strong>impurity measures</strong> to decide:</p>
-<section id="for-classification">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">For Classification:</a><a class="headerlink" href="#for-classification" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Gini Impurity</strong> (most common in CART)</p></li>
-<li><p><strong>Entropy / Information Gain</strong> (used in ID3, C4.5)</p></li>
-</ul>
-<p>👉 Lower impurity = better split.</p>
-</section>
-<section id="for-regression">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">For Regression:</a><a class="headerlink" href="#for-regression" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Mean Squared Error (MSE)</strong></p></li>
-<li><p><strong>Mean Absolute Error (MAE)</strong></p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="advantages">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Advantages</a><a class="headerlink" href="#advantages" title="Link to this heading">#</a></h3>
-<p>✅ Easy to interpret and visualize
-✅ Handles both classification &amp; regression
-✅ Works with both numerical and categorical data
-✅ No need for feature scaling</p>
-</section>
-<hr class="docutils" />
-<section id="disadvantages">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Disadvantages</a><a class="headerlink" href="#disadvantages" title="Link to this heading">#</a></h3>
-<p>❌ Can overfit (very deep trees memorize training data)
-❌ Sensitive to small changes in data
-❌ Greedy splitting (locally optimal, not always globally optimal)</p>
-<p>👉 To fix these, we use <strong>Ensembles</strong> like <strong>Random Forests</strong> and <strong>Gradient Boosted Trees</strong>.</p>
-<hr class="docutils" />
-<p><strong>Workflow of a Decision Tree</strong></p>
+<section id="interpretation">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Interpretation</a><a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Start with the root node (entire dataset).</p></li>
-<li><p>Choose the <strong>best feature</strong> to split on (using impurity measure).</p></li>
-<li><p>Split the dataset into subsets.</p></li>
-<li><p>Repeat recursively for each subset.</p></li>
-<li><p>Stop when:</p>
+<li><p><strong>Dataset:</strong> <span class="math notranslate nohighlight">\(y = \sin(X) + \text{noise}\)</span>, nonlinear regression problem.</p></li>
+<li><p><strong>Random Forest:</strong></p>
 <ul class="simple">
-<li><p>All points belong to the same class (pure leaf).</p></li>
-<li><p>Max depth reached.</p></li>
-<li><p>Minimum number of samples per leaf reached.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_estimators=100</span></code> → 100 trees</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">oob_score=True</span></code> → enables OOB evaluation</p></li>
+</ul>
+</li>
+<li><p><strong>OOB R²:</strong></p>
+<ul class="simple">
+<li><p>Computed using <strong>samples not seen by each tree</strong> during training</p></li>
+<li><p>Provides an <strong>unbiased estimate of model performance</strong></p></li>
+</ul>
+</li>
+<li><p><strong>Test R²:</strong></p>
+<ul class="simple">
+<li><p>Computed on a separate test set for comparison</p></li>
+</ul>
+</li>
+<li><p><strong>Visualization:</strong></p>
+<ul class="simple">
+<li><p>Shows predicted vs actual values on the test set</p></li>
 </ul>
 </li>
 </ol>
 <hr class="docutils" />
-<p><strong>Example Use Cases</strong></p>
+<p><strong>Key Takeaways</strong></p>
 <ul class="simple">
-<li><p><strong>Classification:</strong> Spam detection, disease diagnosis, loan approval.</p></li>
-<li><p><strong>Regression:</strong> Predicting house prices, sales forecasting.</p></li>
+<li><p>OOB evaluation is like <strong>built-in cross-validation</strong>.</p></li>
+<li><p>Often, <strong>OOB R² is close to test set R²</strong>, validating the model without splitting data further.</p></li>
+<li><p>Very useful when <strong>data is limited</strong> or you want a quick performance check.</p></li>
 </ul>
-<hr class="docutils" />
-<p><strong>In short:</strong></p>
-<p>A <strong>Decision Tree</strong> is like repeatedly asking <strong>“the best question”</strong> until you reach a clear decision.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Click here for Sections</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="DTR/overview.html">Decision Tree Regressor</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="DTR/01_part.html">Cost Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DTR/02_part.html">Performance Metrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DTR/03_part.html">Hyperparameter tuning</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="DTC/overview.html">Decision Tree Classifier</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="DTC/01_part.html">Cost Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DTC/02_part.html">Performance Metrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DTC/03_part.html">Hyperparameters Tuning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DTC/03_part.html#how-to-tune-these">⚖️ How to Tune These?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DTC/03_part.html#typical-workflow">🎯 Typical Workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DTC/03_part.html#pruning">Pruning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DTC/04_part.html">Handle Underfitting/Overfitting</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="01_part.html">Assumptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_part.html">Purity Measures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_part.html">Hyperparameter Tuning in Decision Tree</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_part.html#key-hyperparameters-of-decision-tree"><strong>Key Hyperparameters of Decision Tree</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_part.html#overfitting-vs-underfitting"><strong>2. Overfitting vs Underfitting</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_part.html#practical-steps-for-hyperparameter-tuning"><strong>3. Practical Steps for Hyperparameter Tuning</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_part.html#tips-to-handle-overfitting-underfitting"><strong>4. Tips to Handle Overfitting/Underfitting</strong></a></li>
-</ul>
-</div>
-</div>
-</details></section>
+</section>
 </section>
 </section>
 
@@ -870,7 +800,7 @@ It uses <strong>impurity measures</strong> to decide:</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./machine_learning\supervised_learning\Decision_Tree"
+            path: "./machine_learning\supervised_learning\Random_Forest"
         },
         predefinedOutput: true
     }
@@ -888,20 +818,20 @@ It uses <strong>impurity measures</strong> to decide:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../KNN/09_part.html"
+       href="04_part.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Regression &amp; Classification</p>
+        <p class="prev-next-title">Workflows</p>
       </div>
     </a>
     <a class="right-next"
-       href="DTR/overview.html"
+       href="06_part.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Decision Tree Regressor</p>
+        <p class="prev-next-title">Cost Function</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -921,25 +851,12 @@ It uses <strong>impurity measures</strong> to decide:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intuition-decision-trees-as-conditional-statements"><strong>Intuition: Decision Trees as Conditional Statements</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-a-decision-tree"><strong>Constructing a Decision Tree</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-selecting-the-root-node">Step 1: Selecting the Root Node</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-metrics-for-splitting"><strong>Key Metrics for Splitting</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculating-entropy">Example: Calculating Entropy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-information-gain">Example: Information Gain</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-impure-nodes"><strong>Splitting Impure Nodes</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-next-steps"><strong>Conclusion and Next Steps</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intuition">Intuition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-decision-tree">Structure of a Decision Tree</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-tree-decide-where-to-split">How Does the Tree Decide Where to Split</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-classification">For Classification:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-regression">For Regression:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages">Disadvantages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-oob-evaluation-works"><strong>2. How OOB Evaluation Works</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-oob-evaluation"><strong>3. Advantages of OOB Evaluation</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oob-in-regression-vs-classification"><strong>4. OOB in Regression vs Classification</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-intuition"><strong>5. Example Intuition</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-enable-oob-in-scikit-learn"><strong>6. How to Enable OOB in Scikit-Learn</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
 </ul>
 </li>
 </ul>
