@@ -1,0 +1,934 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hyperparameter Tuning &#8212; Machine Learning Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tooltipster.custom.css?v=7bc2f056" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tooltipster.bundle.min.css?v=37217874" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tooltipster-sideTip-shadow.min.css?v=6227e517" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tooltipster-sideTip-punk.min.css?v=94669e23" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tooltipster-sideTip-noir.min.css?v=21a39f42" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tooltipster-sideTip-light.min.css?v=a18b2449" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tooltipster-sideTip-borderless.min.css?v=dbff53e4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/micromodal.css?v=d7bf34ee" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=6528377c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=7f8ff830"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../../_static/js/hoverxref.js?v=c95ade4f"></script>
+    <script src="../../../_static/js/tooltipster.bundle.min.js?v=18bf091b"></script>
+    <script src="../../../_static/js/micromodal.min.js?v=04d6302d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'machine_learning/supervised_learning/Naive_Bayes/08_part';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Variants of NB" href="07_part.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Machine Learning Handbook - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Machine Learning Handbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../introduction.html">
+                    Machine Learning
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Linear_Regression/overview.html">Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/01_part.html">Overview</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/02_part.html">Gradient Descent</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/03_part.html">Convergence Algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/04_part.html">Cost Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/05_part.html">Multiple Linear Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/06_part.html">Polynomial Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/07_part.html">Performance Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/08_part.html">OLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/09_part.html">Bias–Variance Tradeoff</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/overview.html">Hyperparameter Tuning in Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/01_part.html">Regularization &amp; Generalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/02_part.html">Lasso Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/03_part.html">Ridge Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/04_part.html">Elastic Net Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/05_part.html">Workflow of Regularized Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/06_part.html">Cross-Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/07_part.html">Hyperparameter Tuning methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/08_part.html">Handle Overfitting</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Logistic_Regression/overview.html">Logistic Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Logistic_Regression/01_part.html">Assumtpions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logistic_Regression/02_part.html">Intiution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logistic_Regression/03_part.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logistic_Regression/04_part.html">Cost Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logistic_Regression/05_part.html">Performance Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logistic_Regression/06_part.html">One-vs-Rest (OVR) Logistic Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logistic_Regression/07_part.html">Handling Imabalance dataset</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Logistic_Regression/HyperParameter_Tuning/overview.html">Hyperparameter Tuning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Logistic_Regression/HyperParameter_Tuning/01_part.html">Evaluation Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Logistic_Regression/HyperParameter_Tuning/02_part.html">Cross Validation</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Support_Vector_Machine/overview.html">SVM</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Support_Vector_Machine/SVR/overview.html">SVR</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Support_Vector_Machine/SVR/01_part.html">Cost Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Support_Vector_Machine/SVR/02_part.html">Evaluation Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Support_Vector_Machine/SVR/03_part.html">Hyper-Parameter Intiution</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Support_Vector_Machine/SVC/overview.html">SVC</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Support_Vector_Machine/SVC/01_part.html">Cost Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Support_Vector_Machine/SVC/02_part.html">Evaluation Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Support_Vector_Machine/SVC/03_part.html">Hyper-paramter Tuning Intiution</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Support_Vector_Machine/01_part.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Support_Vector_Machine/02_part.html">Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Support_Vector_Machine/03_part.html">Intiution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Support_Vector_Machine/04_part.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Support_Vector_Machine/05_part.html">Kernels</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="overview.html">Overview</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_part.html">Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_part.html">Intuition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_part.html">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_part.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_part.html">Cost Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_part.html">Performance Metrics</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="07_part.html">Variants of NB</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hyperparameter Tuning</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/svgoudar/AI-ML-Essentials/blob/master/machine_learning/supervised_learning/Naive_Bayes/08_part.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/svgoudar/AI-ML-Essentials" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/svgoudar/AI-ML-Essentials/issues/new?title=Issue%20on%20page%20%2Fmachine_learning/supervised_learning/Naive_Bayes/08_part.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/machine_learning/supervised_learning/Naive_Bayes/08_part.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hyperparameter Tuning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-naive-bayes-gaussiannb">🔹 1. <strong>Gaussian Naive Bayes (<code class="docutils literal notranslate"><span class="pre">GaussianNB</span></code>)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multinomial-naive-bayes-multinomialnb">🔹 2. <strong>Multinomial Naive Bayes (<code class="docutils literal notranslate"><span class="pre">MultinomialNB</span></code>)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bernoulli-naive-bayes-bernoullinb">🔹 3. <strong>Bernoulli Naive Bayes (<code class="docutils literal notranslate"><span class="pre">BernoulliNB</span></code>)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tuning-process">🔹 4. <strong>Hyperparameter Tuning Process</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="hyperparameter-tuning">
+<h1>Hyperparameter Tuning<a class="headerlink" href="#hyperparameter-tuning" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="gaussian-naive-bayes-gaussiannb">
+<h2>🔹 1. <strong>Gaussian Naive Bayes (<code class="docutils literal notranslate"><span class="pre">GaussianNB</span></code>)</strong><a class="headerlink" href="#gaussian-naive-bayes-gaussiannb" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Used when features are <strong>continuous</strong> and follow (roughly) a <strong>normal distribution</strong>.</p></li>
+</ul>
+<p><strong>Hyperparameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">var_smoothing</span></code>:</p>
+<ul>
+<li><p>Adds a small constant to the variance to prevent division by zero (numerical stability).</p></li>
+<li><p>Default: <span class="math notranslate nohighlight">\(10^{-9}\)</span>.</p></li>
+<li><p>Tuning: Test values like <span class="math notranslate nohighlight">\(10^{-9}, 10^{-8}, 10^{-7}, …\)</span>.</p></li>
+<li><p>Effect: Too small → unstable estimates; too large → overly smoothed probabilities.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.naive_bayes</span><span class="w"> </span><span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Load dataset (continuous features)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Split data</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Define parameter grid for var_smoothing</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;var_smoothing&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">)}</span>
+
+<span class="c1"># Grid search</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">GaussianNB</span><span class="p">(),</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Parameters:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best CV Accuracy:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test Accuracy:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best Parameters: {&#39;var_smoothing&#39;: np.float64(1e-09)}
+Best CV Accuracy: 0.9333333333333333
+Test Accuracy: 0.9777777777777777
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="multinomial-naive-bayes-multinomialnb">
+<h2>🔹 2. <strong>Multinomial Naive Bayes (<code class="docutils literal notranslate"><span class="pre">MultinomialNB</span></code>)</strong><a class="headerlink" href="#multinomial-naive-bayes-multinomialnb" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Used for <strong>discrete features</strong> (e.g., word counts in text classification).</p></li>
+</ul>
+<p><strong>Hyperparameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span></code> (Laplace/Lidstone smoothing):</p>
+<ul>
+<li><p>Controls how much smoothing is applied to avoid zero probabilities.</p></li>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p></li>
+<li><p>Tuning: Usually tested between <code class="docutils literal notranslate"><span class="pre">0.01</span></code> to <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
+<li><p>Effect:</p>
+<ul>
+<li><p>Small <code class="docutils literal notranslate"><span class="pre">alpha</span></code> (close to 0): Model relies heavily on observed frequencies (risk of overfitting).</p></li>
+<li><p>Large <code class="docutils literal notranslate"><span class="pre">alpha</span></code>: More smoothing, may underfit.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fit_prior</span></code>:</p>
+<ul>
+<li><p>Whether to learn class priors from data.</p></li>
+<li><p>Can be set <code class="docutils literal notranslate"><span class="pre">True</span></code> (default) or <code class="docutils literal notranslate"><span class="pre">False</span></code> (if you want uniform priors).</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_20newsgroups</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_extraction.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.naive_bayes</span><span class="w"> </span><span class="kn">import</span> <span class="n">MultinomialNB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
+
+<span class="c1"># Load subset of text dataset</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alt.atheism&#39;</span><span class="p">,</span> <span class="s1">&#39;sci.space&#39;</span><span class="p">]</span>
+<span class="n">newsgroups</span> <span class="o">=</span> <span class="n">fetch_20newsgroups</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;headers&#39;</span><span class="p">,</span><span class="s1">&#39;footers&#39;</span><span class="p">,</span><span class="s1">&#39;quotes&#39;</span><span class="p">))</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">newsgroups</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">newsgroups</span><span class="o">.</span><span class="n">target</span>
+
+<span class="c1"># Pipeline: vectorizer + NB</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;vect&#39;</span><span class="p">,</span> <span class="n">CountVectorizer</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;nb&#39;</span><span class="p">,</span> <span class="n">MultinomialNB</span><span class="p">())</span>
+<span class="p">])</span>
+
+<span class="c1"># Define grid</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;nb__alpha&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+    <span class="s1">&#39;nb__fit_prior&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Grid search</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Parameters:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best CV Accuracy:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">25</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="c1"># Grid search</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">25</span> <span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Parameters:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best CV Accuracy:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\base.py:1363,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1356</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1358</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1359</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1360</span>         <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">   </span><span class="mi">1361</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span> <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1363</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\model_selection\_search.py:1089,</span> in <span class="ni">BaseSearchCV.fit</span><span class="nt">(self, X, y, **params)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1087</span> <span class="n">refit_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1088</span> <span class="k">if</span> <span class="n">y</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1089</span>     <span class="bp">self</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">routed_params</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1090</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1091</span>     <span class="bp">self</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">routed_params</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\base.py:1363,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1356</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1358</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1359</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1360</span>         <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">   </span><span class="mi">1361</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span> <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1363</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\pipeline.py:653,</span> in <span class="ni">Pipeline.fit</span><span class="nt">(self, X, y, **params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">647</span>         <span class="s2">&quot;The `transform_input` parameter can only be set if metadata &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">648</span>         <span class="s2">&quot;routing is enabled. You can enable metadata routing using &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">649</span>         <span class="s2">&quot;`sklearn.set_config(enable_metadata_routing=True)`.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">650</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">652</span> <span class="n">routed_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_method_params</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;fit&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">653</span> <span class="n">Xt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">routed_params</span><span class="p">,</span> <span class="n">raw_params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">654</span> <span class="k">with</span> <span class="n">_print_elapsed_time</span><span class="p">(</span><span class="s2">&quot;Pipeline&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log_message</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">655</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_final_estimator</span> <span class="o">!=</span> <span class="s2">&quot;passthrough&quot;</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\pipeline.py:587,</span> in <span class="ni">Pipeline._fit</span><span class="nt">(self, X, y, routed_params, raw_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">580</span> <span class="c1"># Fit or load from cache the current transformer</span>
+<span class="g g-Whitespace">    </span><span class="mi">581</span> <span class="n">step_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_metadata_for_step</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">582</span>     <span class="n">step_idx</span><span class="o">=</span><span class="n">step_idx</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">583</span>     <span class="n">step_params</span><span class="o">=</span><span class="n">routed_params</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">584</span>     <span class="n">all_params</span><span class="o">=</span><span class="n">raw_params</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">585</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">587</span> <span class="n">X</span><span class="p">,</span> <span class="n">fitted_transformer</span> <span class="o">=</span> <span class="n">fit_transform_one_cached</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">588</span>     <span class="n">cloned_transformer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">589</span>     <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">590</span>     <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">591</span>     <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">592</span>     <span class="n">message_clsname</span><span class="o">=</span><span class="s2">&quot;Pipeline&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">593</span>     <span class="n">message</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_log_message</span><span class="p">(</span><span class="n">step_idx</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">594</span>     <span class="n">params</span><span class="o">=</span><span class="n">step_params</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">595</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">596</span> <span class="c1"># Replace the transformer of the step with the fitted</span>
+<span class="g g-Whitespace">    </span><span class="mi">597</span> <span class="c1"># transformer. This is necessary when loading the transformer</span>
+<span class="g g-Whitespace">    </span><span class="mi">598</span> <span class="c1"># from the cache.</span>
+<span class="g g-Whitespace">    </span><span class="mi">599</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="n">step_idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fitted_transformer</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\joblib\memory.py:326,</span> in <span class="ni">NotMemorizedFunc.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">326</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\pipeline.py:1539,</span> in <span class="ni">_fit_transform_one</span><span class="nt">(transformer, X, y, weight, message_clsname, message, params)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1537</span> <span class="k">with</span> <span class="n">_print_elapsed_time</span><span class="p">(</span><span class="n">message_clsname</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1538</span>     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">transformer</span><span class="p">,</span> <span class="s2">&quot;fit_transform&quot;</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1539</span>         <span class="n">res</span> <span class="o">=</span> <span class="n">transformer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fit_transform&quot;</span><span class="p">,</span> <span class="p">{}))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1540</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1541</span>         <span class="n">res</span> <span class="o">=</span> <span class="n">transformer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fit&quot;</span><span class="p">,</span> <span class="p">{}))</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1542</span>             <span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;transform&quot;</span><span class="p">,</span> <span class="p">{})</span>
+<span class="g g-Whitespace">   </span><span class="mi">1543</span>         <span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\base.py:1363,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1356</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1358</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1359</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1360</span>         <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">   </span><span class="mi">1361</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span> <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1363</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\feature_extraction\text.py:1376,</span> in <span class="ni">CountVectorizer.fit_transform</span><span class="nt">(self, raw_documents, y)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1368</span>             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1369</span>                 <span class="s2">&quot;Upper case characters found in&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1370</span>                 <span class="s2">&quot; vocabulary while &#39;lowercase&#39;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1371</span>                 <span class="s2">&quot; is True. These entries will not&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1372</span>                 <span class="s2">&quot; be matched with any documents&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1373</span>             <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span>             <span class="k">break</span>
+<span class="ne">-&gt; </span><span class="mi">1376</span> <span class="n">vocabulary</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_count_vocab</span><span class="p">(</span><span class="n">raw_documents</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_vocabulary_</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1378</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">binary</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1379</span>     <span class="n">X</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\feature_extraction\text.py:1276,</span> in <span class="ni">CountVectorizer._count_vocab</span><span class="nt">(self, raw_documents, fixed_vocab)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1274</span>     <span class="n">j_indices</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">feature_counter</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="g g-Whitespace">   </span><span class="mi">1275</span>     <span class="n">values</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">feature_counter</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="ne">-&gt; </span><span class="mi">1276</span>     <span class="n">indptr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">j_indices</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1278</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">fixed_vocab</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1279</span>     <span class="c1"># disable defaultdict behaviour</span>
+<span class="g g-Whitespace">   </span><span class="mi">1280</span>     <span class="n">vocabulary</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">vocabulary</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bernoulli-naive-bayes-bernoullinb">
+<h2>🔹 3. <strong>Bernoulli Naive Bayes (<code class="docutils literal notranslate"><span class="pre">BernoulliNB</span></code>)</strong><a class="headerlink" href="#bernoulli-naive-bayes-bernoullinb" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Used for <strong>binary/boolean features</strong> (e.g., whether a word appears in a document).</p></li>
+</ul>
+<p><strong>Hyperparameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span></code> (same role as in MultinomialNB).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">binarize</span></code>:</p>
+<ul>
+<li><p>Threshold for turning feature values into binary (0/1).</p></li>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code> (all non-zero values set to 1).</p></li>
+<li><p>Tuning: Try different thresholds based on data distribution.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_20newsgroups</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_extraction.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.naive_bayes</span><span class="w"> </span><span class="kn">import</span> <span class="n">BernoulliNB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">GridSearchCV</span>
+
+<span class="c1"># Load binary classification dataset</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rec.sport.baseball&#39;</span><span class="p">,</span> <span class="s1">&#39;sci.space&#39;</span><span class="p">]</span>
+<span class="n">newsgroups</span> <span class="o">=</span> <span class="n">fetch_20newsgroups</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;headers&#39;</span><span class="p">,</span><span class="s1">&#39;footers&#39;</span><span class="p">,</span><span class="s1">&#39;quotes&#39;</span><span class="p">))</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">newsgroups</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">newsgroups</span><span class="o">.</span><span class="n">target</span>
+
+<span class="c1"># Pipeline: vectorizer + BernoulliNB</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;vect&#39;</span><span class="p">,</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">binary</span><span class="o">=</span><span class="kc">True</span><span class="p">)),</span>   <span class="c1"># force binary word presence</span>
+    <span class="p">(</span><span class="s1">&#39;nb&#39;</span><span class="p">,</span> <span class="n">BernoulliNB</span><span class="p">())</span>
+<span class="p">])</span>
+
+<span class="c1"># Define parameter grid</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;nb__alpha&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+    <span class="s1">&#39;nb__binarize&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+    <span class="s1">&#39;nb__fit_prior&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Grid Search</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Parameters:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best CV Accuracy:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="hyperparameter-tuning-process">
+<h2>🔹 4. <strong>Hyperparameter Tuning Process</strong><a class="headerlink" href="#hyperparameter-tuning-process" title="Link to this heading">#</a></h2>
+<p>We usually apply:</p>
+<ul class="simple">
+<li><p><strong>GridSearchCV</strong> → exhaustively checks combinations.</p></li>
+<li><p><strong>RandomizedSearchCV</strong> → samples combinations randomly (faster).</p></li>
+<li><p><strong>Cross-validation (StratifiedKFold)</strong> → ensures fair evaluation, especially in imbalanced datasets.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./machine_learning\supervised_learning\Naive_Bayes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="07_part.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Variants of NB</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-naive-bayes-gaussiannb">🔹 1. <strong>Gaussian Naive Bayes (<code class="docutils literal notranslate"><span class="pre">GaussianNB</span></code>)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multinomial-naive-bayes-multinomialnb">🔹 2. <strong>Multinomial Naive Bayes (<code class="docutils literal notranslate"><span class="pre">MultinomialNB</span></code>)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bernoulli-naive-bayes-bernoullinb">🔹 3. <strong>Bernoulli Naive Bayes (<code class="docutils literal notranslate"><span class="pre">BernoulliNB</span></code>)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tuning-process">🔹 4. <strong>Hyperparameter Tuning Process</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By svgoudar
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
