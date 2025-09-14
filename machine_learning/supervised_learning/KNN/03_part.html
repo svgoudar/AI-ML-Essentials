@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Linear Regression &#8212; Machine Learning Handbook</title>
+    <title>Workflows &#8212; Machine Learning Handbook</title>
   
   
   
@@ -77,11 +77,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'machine_learning/supervised_learning/Linear_Regression/overview';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'machine_learning/supervised_learning/KNN/03_part';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Overview" href="01_part.html" />
-    <link rel="prev" title="Machine Learning" href="../../../introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -144,6 +142,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -199,29 +199,29 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Linear Regression</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_part.html">Overview</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Linear_Regression/overview.html">Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/01_part.html">Overview</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="02_part.html">Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/02_part.html">Gradient Descent</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="03_part.html">Convergence Algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/03_part.html">Convergence Algorithm</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="04_part.html">Cost Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_part.html">Multiple Linear Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="06_part.html">Polynomial Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_part.html">Performance Metrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="08_part.html">OLS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="09_part.html">Bias–Variance Tradeoff</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="Hyperparameter_Tuning/overview.html">Hyperparameter Tuning in Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/01_part.html">Regularization &amp; Generalization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/02_part.html">Lasso Regression</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/03_part.html">Ridge Regression</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/04_part.html">Elastic Net Regression</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/05_part.html">Workflow of Regularized Regression</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/06_part.html">Cross-Validation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/07_part.html">Hyperparameter Tuning methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Hyperparameter_Tuning/08_part.html">Handle Overfitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/04_part.html">Cost Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/05_part.html">Multiple Linear Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/06_part.html">Polynomial Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/07_part.html">Performance Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/08_part.html">OLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear_Regression/09_part.html">Bias–Variance Tradeoff</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/overview.html">Hyperparameter Tuning in Linear Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/01_part.html">Regularization &amp; Generalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/02_part.html">Lasso Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/03_part.html">Ridge Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/04_part.html">Elastic Net Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/05_part.html">Workflow of Regularized Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/06_part.html">Cross-Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/07_part.html">Hyperparameter Tuning methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linear_Regression/Hyperparameter_Tuning/08_part.html">Handle Overfitting</a></li>
 </ul>
 </details></li>
 </ul>
@@ -279,48 +279,6 @@
 </ul>
 </details></li>
 </ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../KNN/overview.html">K-Nearest Neighbors (KNN)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../KNN/01_part.html">Assumptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../KNN/02_part.html">Intiution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../KNN/03_part.html">Workflows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../KNN/04_part.html">How to select cluster <span class="math notranslate nohighlight">\(k\)</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../KNN/05_part.html">KNN Variants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../KNN/06_part.html">Cost Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../KNN/07_part.html">Performance Metrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../KNN/08_part.html">Hyperparameter Tuning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../KNN/09_part.html">Regression &amp; Classification</a></li>
-</ul>
-</details></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Decision_Tree/overview.html">Decision Tree</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../Decision_Tree/DTR/overview.html">Decision Tree Regressor</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTR/01_part.html">Cost Functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTR/02_part.html">Performance Metrics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTR/03_part.html">Hyperparameter tuning</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../Decision_Tree/DTC/overview.html">Decision Tree Classifier</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTC/01_part.html">Cost Function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTC/02_part.html">Performance Metrics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTC/03_part.html">Hyperparameters Tuning</a></li>
-
-
-
-<li class="toctree-l3"><a class="reference internal" href="../Decision_Tree/DTC/04_part.html">Handle Underfitting/Overfitting</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2"><a class="reference internal" href="../Decision_Tree/01_part.html">Assumptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Decision_Tree/02_part.html">Purity Measures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Decision_Tree/03_part.html">Hyperparameter Tuning in Decision Tree</a></li>
-
-
-
-
-</ul>
-</details></li>
-</ul>
 
     </div>
 </nav></div>
@@ -374,7 +332,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/svgoudar/AI-ML-Essentials/blob/master/machine_learning/supervised_learning/Linear_Regression/overview.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/svgoudar/AI-ML-Essentials/blob/master/machine_learning/supervised_learning/KNN/03_part.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -422,7 +380,7 @@
       
       
       
-      <li><a href="https://github.com/svgoudar/AI-ML-Essentials/issues/new?title=Issue%20on%20page%20%2Fmachine_learning/supervised_learning/Linear_Regression/overview.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/svgoudar/AI-ML-Essentials/issues/new?title=Issue%20on%20page%20%2Fmachine_learning/supervised_learning/KNN/03_part.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -452,7 +410,7 @@
       
       
       
-      <li><a href="../../../_sources/machine_learning/supervised_learning/Linear_Regression/overview.ipynb" target="_blank"
+      <li><a href="../../../_sources/machine_learning/supervised_learning/KNN/03_part.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -536,7 +494,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Linear Regression</h1>
+    <h1>Workflows</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -546,13 +504,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-linear-regression">What is Linear Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-of-linear-regression">Equation of Linear Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts"><strong>Key Concepts</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-linear-regression">Types of Linear Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">Performance Metrics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation"><strong>1. Data Preparation</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-the-distance-metric"><strong>2. Choose the Distance Metric</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-k"><strong>3. Select <code class="docutils literal notranslate"><span class="pre">k</span></code></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-distances"><strong>4. Compute Distances</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-nearest-neighbors"><strong>5. Identify Nearest Neighbors</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-neighbor-information"><strong>6. Aggregate Neighbor Information</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-the-label-or-value"><strong>7. Assign the Label or Value</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-the-model"><strong>8. Evaluate the Model</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -567,144 +526,153 @@ document.write(`
   <nav class="contents" id="contents" role="doc-toc">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#linear-regression" id="id1">Linear Regression</a></p>
+<li><p><a class="reference internal" href="#workflows" id="id1">Workflows</a></p>
 <ul>
-<li><p><a class="reference internal" href="#what-is-linear-regression" id="id2">What is Linear Regression</a></p></li>
-<li><p><a class="reference internal" href="#equation-of-linear-regression" id="id3">Equation of Linear Regression</a></p></li>
-<li><p><a class="reference internal" href="#key-concepts" id="id4"><strong>Key Concepts</strong></a></p></li>
-<li><p><a class="reference internal" href="#types-of-linear-regression" id="id5">Types of Linear Regression</a></p></li>
-<li><p><a class="reference internal" href="#assumptions" id="id6">Assumptions</a></p></li>
-<li><p><a class="reference internal" href="#performance-metrics" id="id7">Performance Metrics</a></p></li>
-<li><p><a class="reference internal" href="#applications" id="id8">Applications</a></p></li>
+<li><p><a class="reference internal" href="#data-preparation" id="id2"><strong>1. Data Preparation</strong></a></p></li>
+<li><p><a class="reference internal" href="#choose-the-distance-metric" id="id3"><strong>2. Choose the Distance Metric</strong></a></p></li>
+<li><p><a class="reference internal" href="#select-k" id="id4"><strong>3. Select <code class="docutils literal notranslate"><span class="pre">k</span></code></strong></a></p></li>
+<li><p><a class="reference internal" href="#compute-distances" id="id5"><strong>4. Compute Distances</strong></a></p></li>
+<li><p><a class="reference internal" href="#identify-nearest-neighbors" id="id6"><strong>5. Identify Nearest Neighbors</strong></a></p></li>
+<li><p><a class="reference internal" href="#aggregate-neighbor-information" id="id7"><strong>6. Aggregate Neighbor Information</strong></a></p></li>
+<li><p><a class="reference internal" href="#assign-the-label-or-value" id="id8"><strong>7. Assign the Label or Value</strong></a></p></li>
+<li><p><a class="reference internal" href="#evaluate-the-model" id="id9"><strong>8. Evaluate the Model</strong></a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
-<section id="linear-regression">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink">Linear Regression</a><a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
-<section id="what-is-linear-regression">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">What is Linear Regression</a><a class="headerlink" href="#what-is-linear-regression" title="Link to this heading">#</a></h2>
-<p>Linear Regression is one of the most fundamental and widely used <strong>supervised learning algorithms</strong> in machine learning.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="workflows">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">Workflows</a><a class="headerlink" href="#workflows" title="Link to this heading">#</a></h1>
+<section id="data-preparation">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink"><strong>1. Data Preparation</strong></a><a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h2>
+<p>Before applying KNN:</p>
 <ul class="simple">
-<li><p>It is used when the <strong>target variable (Y)</strong> is <strong>continuous</strong> (e.g., predicting salary, house price, temperature).</p></li>
-<li><p>The goal is to model the <strong>relationship</strong> between one or more <strong>independent variables (X)</strong> and the <strong>dependent variable (Y)</strong>.</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="equation-of-linear-regression">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Equation of Linear Regression</a><a class="headerlink" href="#equation-of-linear-regression" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Simple Linear Regression (one feature):</strong></p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-Y = \theta_0 + \theta_1 X + \epsilon
-\]</div>
-<ul class="simple">
-<li><p><strong>Multiple Linear Regression (multiple features):</strong></p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-Y = \theta_0 + \theta_1X_1 + \theta_2X_2 + ... + \theta_nX_n + \epsilon
-\]</div>
-<p>Where:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\theta_0\)</span> → Intercept (bias term)</p></li>
-<li><p><span class="math notranslate nohighlight">\(\theta_1, \theta_2, ..., \theta_n\)</span> → Coefficients (slopes/weights)</p></li>
-<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> → Error term (captures noise not explained by model)</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="key-concepts">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink"><strong>Key Concepts</strong></a><a class="headerlink" href="#key-concepts" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Hypothesis Function</strong> → Predicts Y from X</p></li>
-<li><p><strong>Cost Function (MSE)</strong> → Measures error between predictions and actual values</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2
-\]</div>
-<ul class="simple">
-<li><p><strong>Optimization (Gradient Descent or OLS)</strong> → Finds the best <span class="math notranslate nohighlight">\(\theta\)</span> that minimizes cost</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="types-of-linear-regression">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Types of Linear Regression</a><a class="headerlink" href="#types-of-linear-regression" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Simple Linear Regression</strong> → One input feature</p></li>
-<li><p><strong>Multiple Linear Regression</strong> → More than one input feature</p></li>
-<li><p><strong>Polynomial Regression</strong> → Features transformed into polynomial terms (non-linear relationship handled with linear model)</p></li>
-<li><p><strong>Regularized Regression</strong> → Ridge (L2), Lasso (L1), ElasticNet (combination)</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="assumptions">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Assumptions</a><a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h2>
-<p>Linear regression relies on assumptions:</p>
-<ol class="arabic simple">
-<li><p>Linearity → Relationship between X and Y is linear</p></li>
-<li><p>Independence of errors</p></li>
-<li><p>Homoscedasticity (constant variance of errors)</p></li>
-<li><p>Normal distribution of errors</p></li>
-<li><p>No multicollinearity (in multiple regression)</p></li>
-</ol>
-</section>
-<hr class="docutils" />
-<section id="performance-metrics">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Performance Metrics</a><a class="headerlink" href="#performance-metrics" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>MSE (Mean Squared Error)</strong></p></li>
-<li><p><strong>RMSE (Root Mean Squared Error)</strong></p></li>
-<li><p><strong>MAE (Mean Absolute Error)</strong></p></li>
-<li><p><strong>R² (Coefficient of Determination)</strong></p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="applications">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Applications</a><a class="headerlink" href="#applications" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Predicting <strong>house prices</strong></p></li>
-<li><p>Estimating <strong>sales vs. advertising budget</strong></p></li>
-<li><p>Predicting <strong>student marks vs. study hours</strong></p></li>
-<li><p>Forecasting <strong>demand or stock prices</strong> (basic approach)</p></li>
-</ul>
-<hr class="docutils" />
-<p>✅ <strong>In summary:</strong>
-Linear Regression is the foundation of regression algorithms. It tries to fit the “best fit line (or plane)” that minimizes errors between actual values and predicted values, under certain assumptions.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Click here for Sections</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="toctree-wrapper compound">
+<li><p><strong>Collect data:</strong> You need labeled training data for classification or regression.</p></li>
+<li><p><strong>Feature scaling:</strong> KNN relies on distance metrics, so features should be on the same scale. Use:</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="01_part.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_part.html#workflow-of-regression-models">🔧 Workflow of Regression Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_part.html">Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_part.html#types-of-gradient-descent">Types of Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_part.html">Convergence Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_part.html#global-minima-vs-local-minima">Global Minima vs Local Minima</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_part.html">Cost Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_part.html">Multiple Linear Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_part.html">Polynomial Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_part.html">Performance Metrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_part.html">OLS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09_part.html">Bias–Variance Tradeoff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Hyperparameter_Tuning/overview.html">Hyperparameter Tuning in Linear Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/01_part.html">Regularization &amp; Generalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/02_part.html">Lasso Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/03_part.html">Ridge Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/04_part.html">Elastic Net Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/05_part.html">Workflow of Regularized Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/06_part.html">Cross-Validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/07_part.html">Hyperparameter Tuning methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hyperparameter_Tuning/08_part.html">Handle Overfitting</a></li>
+<li><p>Min-Max Scaling</p></li>
+<li><p>Standardization (Z-score)</p></li>
 </ul>
 </li>
 </ul>
+<p><strong>Why scaling matters:</strong> Without scaling, a feature with a larger range will dominate the distance calculation.</p>
+</section>
+<hr class="docutils" />
+<section id="choose-the-distance-metric">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink"><strong>2. Choose the Distance Metric</strong></a><a class="headerlink" href="#choose-the-distance-metric" title="Link to this heading">#</a></h2>
+<p>Decide how to measure “closeness” between points. Common choices:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>Formula (2D example)</p></th>
+<th class="head"><p>When to Use</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Euclidean</p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2}\)</span></p></td>
+<td><p>Most common, continuous features</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Manhattan</p></td>
+<td><p>(</p></td>
+<td><p>x_1 - y_1</p></td>
+<td><p>+</p></td>
+<td><p>x_2 - y_2</p></td>
+<td><p>)</p></td>
+<td><p>Grid-like distances, discrete features</p></td>
+</tr>
+<tr class="row-even"><td><p>Minkowski</p></td>
+<td><p>Generalization of Euclidean &amp; Manhattan</p></td>
+<td><p>Flexibility with parameter <code class="docutils literal notranslate"><span class="pre">p</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Hamming</p></td>
+<td><p>Counts different features</p></td>
+<td><p>Categorical variables</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-</details></section>
+</section>
+<hr class="docutils" />
+<section id="select-k">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><strong>3. Select <code class="docutils literal notranslate"><span class="pre">k</span></code></strong></a><a class="headerlink" href="#select-k" title="Link to this heading">#</a></h2>
+<p>Decide how many neighbors to consider:</p>
+<ul class="simple">
+<li><p><strong>Small <code class="docutils literal notranslate"><span class="pre">k</span></code></strong> → sensitive to noise, high variance (overfitting)</p></li>
+<li><p><strong>Large <code class="docutils literal notranslate"><span class="pre">k</span></code></strong> → smooths boundaries, may underfit</p></li>
+<li><p>Common practice: test multiple odd <code class="docutils literal notranslate"><span class="pre">k</span></code> values using cross-validation.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="compute-distances">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><strong>4. Compute Distances</strong></a><a class="headerlink" href="#compute-distances" title="Link to this heading">#</a></h2>
+<p>For each new data point <span class="math notranslate nohighlight">\(x_{\text{new}}\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Calculate the distance to every point in the training set.</p></li>
+<li><p>Store these distances in a sorted list.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="identify-nearest-neighbors">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink"><strong>5. Identify Nearest Neighbors</strong></a><a class="headerlink" href="#identify-nearest-neighbors" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Pick the top <code class="docutils literal notranslate"><span class="pre">k</span></code> closest points from the sorted distance list.</p></li>
+<li><p>These points “vote” for the label (classification) or contribute to the average (regression).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="aggregate-neighbor-information">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink"><strong>6. Aggregate Neighbor Information</strong></a><a class="headerlink" href="#aggregate-neighbor-information" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Classification:</strong> Majority vote determines the predicted class.</p>
+<ul>
+<li><p>Optional: weighted vote (closer neighbors count more).</p></li>
+</ul>
+</li>
+<li><p><strong>Regression:</strong> Take the mean (or weighted mean) of neighbors’ values.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="assign-the-label-or-value">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink"><strong>7. Assign the Label or Value</strong></a><a class="headerlink" href="#assign-the-label-or-value" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Output the predicted class or numerical value for <span class="math notranslate nohighlight">\(x_{\text{new}}\)</span>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="evaluate-the-model">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink"><strong>8. Evaluate the Model</strong></a><a class="headerlink" href="#evaluate-the-model" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use performance metrics:</p>
+<ul>
+<li><p>Classification: Accuracy, Precision, Recall, F1-score, Confusion Matrix</p></li>
+<li><p>Regression: MSE, RMSE, MAE, R²</p></li>
+</ul>
+</li>
+<li><p>Optionally, tune <code class="docutils literal notranslate"><span class="pre">k</span></code> and/or distance metric to improve results.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Summary</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Prepare data</strong> → 2. <strong>Scale features</strong> → 3. <strong>Select k &amp; distance metric</strong> →</p></li>
+<li><p><strong>Compute distances</strong> → 5. <strong>Find nearest neighbors</strong> → 6. <strong>Aggregate results</strong> → 7. <strong>Predict output</strong> → 8. <strong>Evaluate &amp; tune</strong></p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -720,7 +688,7 @@ Linear Regression is the foundation of regression algorithms. It tries to fit th
         },
         kernelOptions: {
             name: "python3",
-            path: "./machine_learning\supervised_learning\Linear_Regression"
+            path: "./machine_learning\supervised_learning\KNN"
         },
         predefinedOutput: true
     }
@@ -737,24 +705,6 @@ Linear Regression is the foundation of regression algorithms. It tries to fit th
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../../../introduction.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Machine Learning</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="01_part.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Overview</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -771,13 +721,14 @@ Linear Regression is the foundation of regression algorithms. It tries to fit th
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-linear-regression">What is Linear Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-of-linear-regression">Equation of Linear Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts"><strong>Key Concepts</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-linear-regression">Types of Linear Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">Performance Metrics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation"><strong>1. Data Preparation</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-the-distance-metric"><strong>2. Choose the Distance Metric</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-k"><strong>3. Select <code class="docutils literal notranslate"><span class="pre">k</span></code></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-distances"><strong>4. Compute Distances</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-nearest-neighbors"><strong>5. Identify Nearest Neighbors</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-neighbor-information"><strong>6. Aggregate Neighbor Information</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-the-label-or-value"><strong>7. Assign the Label or Value</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-the-model"><strong>8. Evaluate the Model</strong></a></li>
 </ul>
   </nav></div>
 
