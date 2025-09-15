@@ -175,3 +175,15 @@ a.colab-badge img {
   width: 32px;
   height: 32px;
 }
+
+/* Make main content container full width */
+.bd-content {
+    max-width: 100% !important;
+    padding-left: 20px;   /* optional padding */
+    padding-right: 20px;
+}
+
+/* Optional: remove sidebar width limit */
+.bd-sidebar {
+    max-width: 300px;
+}
