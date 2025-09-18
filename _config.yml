@@ -38,6 +38,7 @@ html:
   theme:
     name: sphinx_book_theme
     options:
+      wide: true
       logo_only: false
       collapse_navigation: true
       sticky_navigation: true

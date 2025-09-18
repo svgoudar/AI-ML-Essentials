@@ -28,4 +28,62 @@ parts:
       sections:
       - glob: machine_learning/supervised_learning/Support_Vector_Machine/SVC/*part
     - glob: machine_learning/supervised_learning/Support_Vector_Machine/*part
-    
+- chapters:
+  - file: machine_learning/supervised_learning/Naive_Bayes/overview
+    sections:
+    - glob: machine_learning/supervised_learning/Naive_Bayes/*part
+- chapters:
+  - file: machine_learning/supervised_learning/KNN/overview
+    sections:
+    - glob: machine_learning/supervised_learning/KNN/*part
+- chapters:
+  - file: machine_learning/supervised_learning/Decision_Tree/overview
+    sections:
+    - file: machine_learning/supervised_learning/Decision_Tree/DTR/overview
+      sections:
+      - glob: machine_learning/supervised_learning/Decision_Tree/DTR/*part
+    - file: machine_learning/supervised_learning/Decision_Tree/DTC/overview
+      sections:
+      - glob: machine_learning/supervised_learning/Decision_Tree/DTC/*part
+    - glob: machine_learning/supervised_learning/Decision_Tree/*part
+- chapters:
+  - file: machine_learning/supervised_learning/Random_Forest/overview
+    sections:
+    - glob: machine_learning/supervised_learning/Random_Forest/*part
+    - glob: machine_learning/supervised_learning/Random_Forest/SV*
+- chapters:
+  - file: machine_learning/supervised_learning/AdaBoost/overview
+    sections:
+    - glob: machine_learning/supervised_learning/AdaBoost/*part
+- chapters:
+  - file: machine_learning/supervised_learning/Gradient_boosting/overview
+    sections:
+    - glob: machine_learning/supervised_learning/Gradient_boosting/*part
+- chapters:
+  - file: machine_learning/supervised_learning/XGBoost/overview
+    sections:
+    - glob: machine_learning/supervised_learning/XGBoost/*part
+- chapters:
+  - file: machine_learning/unsupervised_learning/K_Means/overview
+    sections:
+    - glob: machine_learning/unsupervised_learning/K_Means/*part
+- chapters:
+  - file: machine_learning/unsupervised_learning/Hierarchical_Clustering/overview
+    sections:
+    - glob: machine_learning/unsupervised_learning/Hierarchical_Clustering/*part
+- chapters:
+  - file: machine_learning/unsupervised_learning/PCA/overview
+    sections:
+    - glob: machine_learning/unsupervised_learning/PCA/*part
+- chapters:
+  - file: machine_learning/unsupervised_learning/T_SNE/overview
+    sections:
+    - glob: machine_learning/unsupervised_learning/T_SNE/*part
+- chapters:
+  - file: machine_learning/unsupervised_learning/DBSCAN/overview
+    sections:
+    - glob: machine_learning/unsupervised_learning/DBSCAN/*part
+- chapters:
+  - file: machine_learning/unsupervised_learning/Anamoly_Detection/overview
+    sections:
+    - glob: machine_learning/unsupervised_learning/Anamoly_Detection/*part
