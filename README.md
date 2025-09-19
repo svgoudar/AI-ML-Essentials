@@ -1,4 +1,4 @@
-# AI-ML Essentials
+# Learn Machine Learning & NLP
 
  Welcome to the **AI-ML Essentials** repository! This project is a comprehensive collection of articles, notebooks, and resources designed to help you master the fundamentals and practical applications of Artificial Intelligence and Machine Learning.
 
