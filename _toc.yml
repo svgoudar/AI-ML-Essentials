@@ -87,3 +87,15 @@ parts:
   - file: machine_learning/unsupervised_learning/Anamoly_Detection/overview
     sections:
     - glob: machine_learning/unsupervised_learning/Anamoly_Detection/*part
+- chapters:
+  - file: machine_learning/NLP/overview
+    sections:
+    - glob: machine_learning/NLP/*part
+    - file: machine_learning/NLP/Text_Pre_Processor/overview
+      sections:
+      - glob: machine_learning/NLP/Text_Pre_Processor/*part
+    - file: machine_learning/NLP/Vectorization/overview
+      sections:
+      - glob: machine_learning/NLP/Vectorization/*part
+    
+    
